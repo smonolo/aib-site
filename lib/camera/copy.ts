@@ -323,7 +323,7 @@ const it: AibCopy = {
       'Se questa informativa cambia in modo sostanziale, la data di «Ultimo aggiornamento» sopra verrà aggiornata. Continuare a usare l’app dopo un aggiornamento implica l’accettazione dell’informativa rivista.',
     contactsTitle: 'Contatti',
     contactsBodyHtml:
-      'Sito dello sviluppatore: <a href="https://smnl.dev/?ref=aib-camera-privacy">smnl.dev</a> · URL informativa: <a href="https://aib.smnl.dev/camera/privacy">aib.smnl.dev/camera/privacy</a> · Termini: <a data-aib="terms">aib.smnl.dev/camera/terms</a>',
+      'Sito dello sviluppatore: <a href="https://smnl.dev/?ref=aib-camera-privacy">smnl.dev</a> · URL informativa: <a data-aib="privacy">aib.smnl.dev/camera/privacy</a> · Termini: <a data-aib="terms">aib.smnl.dev/camera/terms</a>',
     contactsMailHtml:
       'Per domande sulla privacy di AIB Camera: <a href="mailto:stefano@smnl.dev">stefano@smnl.dev</a>.',
   },
@@ -372,7 +372,7 @@ const it: AibCopy = {
       'L’app e questi termini possono cambiare. La data di «Ultimo aggiornamento» verrà rivista in caso di modifiche sostanziali. Continuare a usare l’app dopo un aggiornamento implica l’accettazione dei termini rivisti.',
     contactsTitle: 'Contatti',
     contactsBodyHtml:
-      'Sito dello sviluppatore: <a href="https://smnl.dev/?ref=aib-camera-terms">smnl.dev</a> · URL termini: <a href="https://aib.smnl.dev/camera/terms">aib.smnl.dev/camera/terms</a> · Privacy: <a data-aib="privacy">aib.smnl.dev/camera/privacy</a>',
+      'Sito dello sviluppatore: <a href="https://smnl.dev/?ref=aib-camera-terms">smnl.dev</a> · URL termini: <a data-aib="terms">aib.smnl.dev/camera/terms</a> · Privacy: <a data-aib="privacy">aib.smnl.dev/camera/privacy</a>',
     contactsMailHtml:
       'Domande sui termini o sull’app: <a href="mailto:stefano@smnl.dev">stefano@smnl.dev</a>.',
   },
@@ -583,7 +583,7 @@ const en: AibCopy = {
       'If this policy changes in a material way, the “Last updated” date above will be revised. Continuing to use the app after an update means you accept the revised policy.',
     contactsTitle: 'Contact',
     contactsBodyHtml:
-      'Developer site: <a href="https://smnl.dev/?ref=aib-camera-privacy">smnl.dev</a> · Policy URL: <a href="https://aib.smnl.dev/camera/privacy">aib.smnl.dev/camera/privacy</a> · Terms: <a data-aib="terms">aib.smnl.dev/camera/terms</a>',
+      'Developer site: <a href="https://smnl.dev/?ref=aib-camera-privacy">smnl.dev</a> · Policy URL: <a data-aib="privacy">aib.smnl.dev/camera/privacy</a> · Terms: <a data-aib="terms">aib.smnl.dev/camera/terms</a>',
     contactsMailHtml:
       'Privacy questions about AIB Camera: <a href="mailto:stefano@smnl.dev">stefano@smnl.dev</a>.',
   },
@@ -632,7 +632,7 @@ const en: AibCopy = {
       'The app and these terms may change. The “Last updated” date will be revised for material changes. Continuing to use the app after an update means you accept the revised terms.',
     contactsTitle: 'Contact',
     contactsBodyHtml:
-      'Developer site: <a href="https://smnl.dev/?ref=aib-camera-terms">smnl.dev</a> · Terms URL: <a href="https://aib.smnl.dev/camera/terms">aib.smnl.dev/camera/terms</a> · Privacy: <a data-aib="privacy">aib.smnl.dev/camera/privacy</a>',
+      'Developer site: <a href="https://smnl.dev/?ref=aib-camera-terms">smnl.dev</a> · Terms URL: <a data-aib="terms">aib.smnl.dev/camera/terms</a> · Privacy: <a data-aib="privacy">aib.smnl.dev/camera/privacy</a>',
     contactsMailHtml:
       'Questions about the terms or the app: <a href="mailto:stefano@smnl.dev">stefano@smnl.dev</a>.',
   },

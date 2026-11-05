@@ -1,7 +1,7 @@
 export const SITE_ORIGIN = 'https://aib.smnl.dev'
 export const DEVELOPER_ORIGIN = 'https://smnl.dev'
 export const CONTACT_EMAIL = 'stefano@smnl.dev'
-export const SITAC_APP_URL = 'https://aib-sitac.smnl.dev'
+export const SITAC_APP_URL = 'https://sitac.aib.smnl.dev'
 export const GITHUB_ORG = 'https://github.com/smonolo'
 
 export const site = {

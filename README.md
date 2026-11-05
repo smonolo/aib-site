@@ -6,7 +6,7 @@ Marketing home for the AIB product family: [aib.smnl.dev](https://aib.smnl.dev).
 | --------- | ------------------------------------------------------------------------------------------------- |
 | `/`       | Hub                                                                                               |
 | `/camera` | [AIB Camera](https://aib.smnl.dev/camera)                                                         |
-| `/sitac`  | [AIB SITAC](https://aib.smnl.dev/sitac) · app at [aib-sitac.smnl.dev](https://aib-sitac.smnl.dev) |
+| `/sitac`  | [AIB SITAC](https://aib.smnl.dev/sitac) · app at [sitac.aib.smnl.dev](https://sitac.aib.smnl.dev) |
 
 Independent, unofficial tools. Not affiliated with Protezione Civile, Vigili del Fuoco, or other institutions.
 
