@@ -44,12 +44,6 @@ export type UiCopy = {
     }[]
     cameraHighlights: string[]
     sitacHighlights: string[]
-    startTitle: string
-    startLead: string
-    guideCamera: string
-    guideSitac: string
-    privacyCamera: string
-    privacySitac: string
   }
 }
 
@@ -78,10 +72,10 @@ const it: UiCopy = {
   cameraSubnav: 'Navigazione secondaria AIB Camera',
   sitacSubnav: 'Navigazione secondaria AIB SITAC',
   hub: {
-    metaTitle: 'AIB: strumenti indipendenti per antincendio boschivo',
+    metaTitle: 'AIB. Strumenti per il campo.',
     metaDescription:
-      'Home degli strumenti AIB: AIB Camera e AIB SITAC per antincendio boschivo.',
-    title: 'AIB: strumenti per il campo',
+      'AIB Camera e AIB SITAC: fotocamera di campo e mappa tattica per antincendio boschivo.',
+    title: 'AIB. Strumenti per il campo.',
     description:
       'Fotocamera di campo e mappa tattica per antincendio boschivo: AIB Camera e AIB SITAC.',
     productsTitle: 'I prodotti',
@@ -126,13 +120,6 @@ const it: UiCopy = {
       'Password opzionale sulle stanze',
       'Export GeoJSON / PNG',
     ],
-    startTitle: 'Da dove partire',
-    startLead:
-      'Guide e pagine legali sono sul sito marketing; le app non le duplicano.',
-    guideCamera: 'Guida Camera',
-    guideSitac: 'Guida SITAC',
-    privacyCamera: 'Privacy Camera',
-    privacySitac: 'Privacy SITAC',
   },
 }
 
@@ -161,10 +148,10 @@ const en: UiCopy = {
   cameraSubnav: 'AIB Camera secondary navigation',
   sitacSubnav: 'AIB SITAC secondary navigation',
   hub: {
-    metaTitle: 'AIB: independent tools for wildfire response',
+    metaTitle: 'AIB. Tools for the field.',
     metaDescription:
-      'Home of the AIB tools: AIB Camera and AIB SITAC for wildfire response.',
-    title: 'AIB: tools for the field',
+      'AIB Camera and AIB SITAC: field camera and tactical map for wildfire response.',
+    title: 'AIB. Tools for the field.',
     description:
       'Field camera and tactical map for wildfire response: AIB Camera and AIB SITAC.',
     productsTitle: 'Products',
@@ -209,13 +196,6 @@ const en: UiCopy = {
       'Optional room password',
       'GeoJSON / PNG export',
     ],
-    startTitle: 'Where to start',
-    startLead:
-      'Guides and legal pages live on the marketing site; the apps do not duplicate them.',
-    guideCamera: 'Camera guide',
-    guideSitac: 'SITAC guide',
-    privacyCamera: 'Camera privacy',
-    privacySitac: 'SITAC privacy',
   },
 }
 

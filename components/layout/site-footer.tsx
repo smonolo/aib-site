@@ -32,8 +32,8 @@ function SiteFooterInner() {
   ]
 
   return (
-    <footer className="mt-auto border-t border-aib-border bg-aib-surface-muted pb-[env(safe-area-inset-bottom)] text-aib-fg dark:border-aib-border-dark dark:bg-aib-surface-dark dark:text-aib-fg-inverse">
-      <div className="mx-auto grid w-full max-w-5xl gap-8 px-[max(1rem,env(safe-area-inset-left))] py-10 pr-[max(1rem,env(safe-area-inset-right))] sm:px-[max(1.5rem,env(safe-area-inset-left))] sm:py-12 sm:pr-[max(1.5rem,env(safe-area-inset-right))] md:grid-cols-3">
+    <footer className="mt-auto border-t border-aib-border-strong bg-aib-surface-muted pb-[env(safe-area-inset-bottom)] text-aib-fg dark:border-aib-border-dark dark:bg-aib-surface-dark dark:text-aib-fg-inverse">
+      <div className="mx-auto grid w-full max-w-5xl gap-8 px-[max(1rem,env(safe-area-inset-left))] py-14 pr-[max(1rem,env(safe-area-inset-right))] sm:px-[max(1.5rem,env(safe-area-inset-left))] sm:py-16 sm:pr-[max(1.5rem,env(safe-area-inset-right))] md:grid-cols-3">
         <div>
           <p className="text-xl font-bold tracking-[-0.3px]">{site.name}</p>
           <p className="mt-1 text-sm text-aib-muted dark:text-aib-muted-dark">
@@ -110,7 +110,7 @@ function SiteFooterInner() {
         </div>
       </div>
 
-      <div className="border-t border-aib-border dark:border-aib-border-dark">
+      <div className="border-t border-aib-border-strong dark:border-aib-border-dark">
         <div className="mx-auto flex w-full max-w-5xl flex-col gap-4 px-[max(1rem,env(safe-area-inset-left))] py-4 pr-[max(1rem,env(safe-area-inset-right))] text-sm text-aib-muted sm:px-[max(1.5rem,env(safe-area-inset-left))] sm:pr-[max(1.5rem,env(safe-area-inset-right))] md:flex-row md:items-center md:justify-between dark:text-aib-muted-dark">
           <div className="space-y-1">
             <p>
@@ -119,7 +119,7 @@ function SiteFooterInner() {
             <p>{copy.footerUnaffiliated}</p>
           </div>
           <div
-            className="flex flex-wrap items-center gap-2"
+            className="flex flex-wrap items-center gap-0.5 sm:gap-1"
             role="group"
             aria-label={copy.languageAndTheme}
           >

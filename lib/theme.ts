@@ -38,3 +38,34 @@ export function subscribeThemePreference(
     window.removeEventListener(THEME_CHANGE, onStoreChange)
   }
 }
+
+export function readResolvedDark(): boolean {
+  if (typeof document === 'undefined') return false
+  return document.documentElement.classList.contains('dark')
+}
+
+export function subscribeResolvedDark(onStoreChange: () => void): () => void {
+  if (typeof document === 'undefined') return () => {}
+  const root = document.documentElement
+  const observer = new MutationObserver(mutations => {
+    for (const mutation of mutations) {
+      if (
+        mutation.type === 'attributes' &&
+        mutation.attributeName === 'class'
+      ) {
+        onStoreChange()
+        return
+      }
+    }
+  })
+  observer.observe(root, { attributes: true, attributeFilter: ['class'] })
+  const unsubPreference = subscribeThemePreference(onStoreChange)
+  const media = window.matchMedia('(prefers-color-scheme: dark)')
+  const onMedia = () => onStoreChange()
+  media.addEventListener('change', onMedia)
+  return () => {
+    observer.disconnect()
+    unsubPreference()
+    media.removeEventListener('change', onMedia)
+  }
+}

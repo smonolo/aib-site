@@ -1,5 +1,6 @@
 'use client'
 
+import { AltArrowDownIcon } from '@solar-icons/react/linear/alt-arrow-down'
 import { Suspense } from 'react'
 import { useSyncExternalStore } from 'react'
 import { AppIcon } from '@/components/icons/app-icon'
@@ -10,7 +11,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { controlTriggerClass } from '@/lib/control-trigger'
+import { controlItemClass } from '@/lib/control-trigger'
 import {
   applyThemePreference,
   readThemePreference,
@@ -45,15 +46,19 @@ function ThemeToggleInner({ className }: { className?: string }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        className={cn(
-          'inline-flex size-11 cursor-pointer items-center justify-center rounded-aib-sm transition-opacity hover:opacity-70',
-          controlTriggerClass,
-          className
-        )}
+        className={cn(controlItemClass, className)}
         aria-label={`${copy.themeLabel}: ${current.label}. ${copy.themeSelect}`}
         title={`${copy.themeLabel}: ${current.label}`}
       >
-        <AppIcon name={current.icon} size={18} strokeWidth={1.75} />
+        <AppIcon name={current.icon} size={16} strokeWidth={1.75} />
+        <span className="hidden sm:inline">{current.label}</span>
+        <AltArrowDownIcon
+          size={14}
+          color="currentColor"
+          strokeWidth={1.75}
+          className="hidden opacity-70 sm:block"
+          aria-hidden
+        />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" aria-label={copy.themesAvailable}>
         <DropdownMenuRadioGroup
@@ -79,10 +84,7 @@ export function ThemeToggle({ className }: { className?: string }) {
     <Suspense
       fallback={
         <div
-          className={cn(
-            'size-11 rounded-aib-sm bg-aib-surface dark:bg-aib-surface-muted-dark',
-            className
-          )}
+          className={cn('inline-flex min-h-11 min-w-11', className)}
           aria-hidden
         />
       }

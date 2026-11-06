@@ -4,13 +4,14 @@ import { AltArrowDownIcon } from '@solar-icons/react/linear/alt-arrow-down'
 import { CheckIcon } from '@solar-icons/react/linear/check'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { Suspense, useEffect, useTransition } from 'react'
+import { LocaleFlag } from '@/components/icons/locale-flag'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { controlTriggerClass } from '@/lib/control-trigger'
+import { controlItemClass } from '@/lib/control-trigger'
 import {
   beginLocaleNavigation,
   hrefForLocale,
@@ -79,20 +80,18 @@ function LanguageSelectInner({ className }: { className?: string }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        className={cn(
-          'inline-flex h-11 cursor-pointer items-center gap-1.5 rounded-aib-sm px-2.5 text-[13px] font-semibold transition-opacity hover:opacity-70',
-          controlTriggerClass,
-          className
-        )}
+        className={cn(controlItemClass, className)}
         aria-label={`${copy.languageLabel}: ${LOCALE_LABELS[locale]}. ${copy.languageSelect}`}
+        title={`${copy.languageLabel}: ${LOCALE_LABELS[locale]}`}
         disabled={pending}
       >
-        <span aria-hidden>{locale.toUpperCase()}</span>
+        <LocaleFlag locale={locale} />
+        <span>{locale.toUpperCase()}</span>
         <AltArrowDownIcon
           size={14}
           color="currentColor"
           strokeWidth={1.75}
-          className="opacity-70"
+          className="hidden opacity-70 sm:block"
           aria-hidden
         />
       </DropdownMenuTrigger>
@@ -114,6 +113,7 @@ function LanguageSelectInner({ className }: { className?: string }) {
                   <CheckIcon size={16} color="currentColor" strokeWidth={2} />
                 ) : null}
               </span>
+              <LocaleFlag locale={code} />
               {LOCALE_LABELS[code]}
             </DropdownMenuItem>
           )
@@ -128,10 +128,7 @@ export function LanguageSelect({ className }: { className?: string }) {
     <Suspense
       fallback={
         <div
-          className={cn(
-            'h-11 min-w-14 rounded-aib-sm bg-aib-surface dark:bg-aib-surface-muted-dark',
-            className
-          )}
+          className={cn('inline-flex min-h-11 min-w-11', className)}
           aria-hidden
         />
       }

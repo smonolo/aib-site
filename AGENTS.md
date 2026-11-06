@@ -20,6 +20,7 @@ Marketing site for the AIB product family at **aib.smnl.dev**. Product apps live
 - **Wider layout** than the old narrow column: shell `max-w-5xl`; feature grids on product homes.
 - **i18n.** Site-wide IT default + EN via `?lang=en` (and `localStorage` `aib-site-lang`). Copy: `lib/ui-copy.ts` (chrome/hub), `lib/camera/copy.ts`, `lib/sitac/copy.ts`.
 - **Always format** edited code with Prettier before finishing (`npm run format` / `format:check`).
+- **Accessibility / mobile.** Follow `.cursor/rules/accessibility.mdc` and `.cursor/rules/mobile.mdc` (landmarks, focus, contrast, safe areas, touch targets).
 - **License.** PolyForm Noncommercial 1.0.0. Do not relicense without an explicit owner request.
 
 ## Stack rules

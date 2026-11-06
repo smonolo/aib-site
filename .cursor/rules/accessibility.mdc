@@ -1,0 +1,26 @@
+---
+description: Accessibility requirements for the AIB marketing site
+alwaysApply: true
+---
+
+# Accessibility
+
+Ship UI that works with keyboard, screen readers, and reduced motion. Prefer the patterns already in `components/layout/*` and `lib/focus.ts`.
+
+## Required
+
+- **Landmarks**: one `main` with `id="contenuto-principale"`; use `aria-labelledby` on sections with visible headings; label `nav` / control groups.
+- **Skip link**: keep `SkipLink` as the first focusable control on full-page shells.
+- **Names**: icon-only or truncated controls need `aria-label` (or visible text). Decorative icons stay `aria-hidden` (via `AppIcon`).
+- **Focus**: use `focusRingClass` / `focusRingSurfaceClass`; never remove focus outlines. On dark media (hero), offset rings so they stay visible.
+- **State**: mark current nav with `aria-current="page"`; expose dropdown value in the trigger `aria-label`.
+- **Motion**: transitions/animations must include `motion-reduce:transition-none` (or equivalent) when they change layout, color, or opacity.
+- **Contrast**: text and UI chrome must read on both themes. Do not rely on opacity alone for inactive vs hover if contrast fails; prefer muted → foreground color. Hero overlays must keep body/headline readable on light and dark images.
+- **i18n**: user-facing strings (including `aria-label`) come from copy helpers, not hardcoded Italian/English in components—except stable product names.
+
+## Avoid
+
+- Click-only interactions with no keyboard path.
+- `title` as the only accessible name.
+- Empty buttons/links.
+- Auto-playing motion that cannot be reduced.

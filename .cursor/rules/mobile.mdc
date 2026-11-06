@@ -1,0 +1,33 @@
+---
+description: Mobile-first layout and interaction rules for the AIB marketing site
+alwaysApply: true
+---
+
+# Mobile
+
+Design and implement for small viewports first. Desktop breakpoints enhance; they do not redefine the product.
+
+## Layout
+
+- Respect safe areas: `env(safe-area-inset-*)` on fixed chrome, page padding, and footer bottom.
+- Shell width stays `max-w-5xl` with comfortable horizontal padding (`max(1rem, …)` on mobile, larger from `sm`).
+- Stack CTAs full-width on mobile (`flex-col` + `[&_a]:w-full`); row/wrap from `sm` up.
+- Dense chrome (navbar): prefer icon + short label; hide secondary text/chevrons below ~420px / `sm` while keeping accessible names.
+- Touch targets: use `touchTargetClass` (`min-h-11 min-w-11`) for nav, icon controls, and dropdown triggers.
+
+## Media and performance
+
+- Prefer one theme-resolved hero/asset over dual always-mounted images.
+- Use `sizes` on `next/image`; `priority` only for LCP candidates.
+- Avoid horizontal overflow; test narrow widths (~320–390px) for hub, header, and product cards.
+
+## Typography and spacing
+
+- Use fluid or stepped type so hero headlines fit intended line breaks on phones.
+- Tighten section padding on mobile (`py-10`) and expand from `sm`.
+- Cards: slightly less padding on mobile than desktop; keep readable tap spacing between stacked actions.
+
+## Interaction
+
+- Assume thumb reach: primary actions near content, not only in distant corners.
+- Hover color changes are fine; never rely on hover alone—focus and tap must reveal the same affordance.

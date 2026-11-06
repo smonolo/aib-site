@@ -19,10 +19,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
   title: {
-    default: 'AIB',
+    default: 'AIB. Strumenti per il campo.',
     template: '%s · AIB',
   },
-  description: 'AIB Camera e AIB SITAC: strumenti per antincendio boschivo.',
+  description:
+    'AIB Camera e AIB SITAC: fotocamera di campo e mappa tattica per antincendio boschivo.',
   authors: [{ name: 'Stefano Monolo', url: 'https://smnl.dev' }],
   creator: 'Stefano Monolo',
   icons: {
