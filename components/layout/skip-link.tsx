@@ -12,8 +12,8 @@ function SkipLinkInner() {
     <a
       href="#contenuto-principale"
       className={cn(
-        'sr-only z-100 rounded-aib-sm bg-aib-fg px-3 py-2 text-[13px] font-semibold text-aib-fg-inverse',
-        'focus:not-sr-only focus:fixed focus:top-3 focus:left-3',
+        'sr-only z-100 rounded-aib-sm bg-aib-fg px-3 py-2.5 text-[13px] font-semibold text-aib-fg-inverse',
+        'focus:not-sr-only focus:fixed focus:top-[max(0.75rem,env(safe-area-inset-top))] focus:left-[max(0.75rem,env(safe-area-inset-left))]',
         focusRingClass
       )}
     >

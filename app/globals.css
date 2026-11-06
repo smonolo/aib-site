@@ -115,6 +115,8 @@
   }
   body {
     @apply bg-background font-sans text-foreground antialiased;
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
   }
   button:not(:disabled),
   [role='button']:not([aria-disabled='true']),

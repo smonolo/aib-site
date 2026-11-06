@@ -129,7 +129,7 @@ export function LanguageSelect({ className }: { className?: string }) {
       fallback={
         <div
           className={cn(
-            'h-11 min-w-14 rounded-aib-sm border border-aib-border dark:border-aib-border-dark',
+            'h-11 min-w-14 rounded-aib-sm bg-aib-surface dark:bg-aib-surface-muted-dark',
             className
           )}
           aria-hidden

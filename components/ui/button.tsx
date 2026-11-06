@@ -8,7 +8,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-aib-fg text-aib-fg-inverse hover:opacity-70 dark:bg-aib-surface dark:text-aib-fg',
+          'bg-aib-fg text-aib-fg-inverse hover:opacity-70 dark:bg-aib-fg-inverse dark:text-aib-fg',
         secondary:
           'bg-aib-surface-muted text-aib-fg hover:opacity-70 dark:bg-aib-surface-muted-dark dark:text-aib-fg-inverse',
         ghost:
@@ -20,7 +20,7 @@ const buttonVariants = cva(
       size: {
         default: 'min-h-[52px] rounded-aib px-3',
         sm: 'min-h-11 rounded-aib-sm px-3 text-[13px]',
-        xs: 'min-h-9 rounded-aib-sm px-2 text-[12px] font-medium',
+        xs: 'min-h-11 rounded-aib-sm px-2.5 text-[12px] font-medium',
       },
     },
     defaultVariants: {

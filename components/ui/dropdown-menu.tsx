@@ -36,8 +36,8 @@ function DropdownMenuContent({
         <MenuPrimitive.Popup
           data-slot="dropdown-menu-content"
           className={cn(
-            'z-50 max-h-(--available-height) min-w-40 origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-aib border border-aib-border bg-aib-surface p-1 text-aib-fg shadow-[0_12px_32px_rgba(0,0,0,0.14)] outline-none',
-            'dark:border-aib-border-dark dark:bg-aib-surface-dark dark:text-aib-fg-inverse dark:shadow-[0_12px_32px_rgba(0,0,0,0.45)]',
+            'z-50 max-h-(--available-height) max-w-[min(calc(100vw-1.5rem),20rem)] min-w-40 origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-aib bg-aib-surface p-1 text-aib-fg outline-none',
+            'dark:bg-aib-surface-dark dark:text-aib-fg-inverse',
             'data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95',
             'data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2',
             'motion-reduce:animate-none motion-reduce:transition-none',

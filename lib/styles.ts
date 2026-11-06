@@ -1,5 +1,5 @@
 export const pageTitleClass =
-  'text-[28px] font-bold leading-tight tracking-[-0.4px] text-aib-fg sm:text-[32px] dark:text-aib-fg-inverse'
+  'text-[26px] font-bold leading-tight tracking-[-0.4px] text-balance text-aib-fg sm:text-[32px] dark:text-aib-fg-inverse'
 
 export const pageLeadClass =
   'text-[16px] leading-normal text-aib-muted sm:text-[18px] dark:text-aib-muted-dark'

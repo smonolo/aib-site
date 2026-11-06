@@ -80,7 +80,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       fallback={
         <div
           className={cn(
-            'size-11 rounded-aib-sm border border-aib-border dark:border-aib-border-dark',
+            'size-11 rounded-aib-sm bg-aib-surface dark:bg-aib-surface-muted-dark',
             className
           )}
           aria-hidden

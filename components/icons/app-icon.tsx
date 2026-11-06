@@ -1,8 +1,10 @@
 import { BookIcon } from '@solar-icons/react/linear/book'
+import { CameraIcon } from '@solar-icons/react/linear/camera'
 import { DocumentTextIcon } from '@solar-icons/react/linear/document-text'
 import { HomeIcon } from '@solar-icons/react/linear/home'
 import { LetterIcon } from '@solar-icons/react/linear/letter'
 import { LinkRoundIcon } from '@solar-icons/react/linear/link-round'
+import { MapIcon } from '@solar-icons/react/linear/map'
 import { MonitorSmartphoneIcon } from '@solar-icons/react/linear/monitor-smartphone'
 import { MoonIcon } from '@solar-icons/react/linear/moon'
 import { NotesIcon } from '@solar-icons/react/linear/notes'
@@ -24,6 +26,8 @@ const ICONS = {
   devices: MonitorSmartphoneIcon,
   sun: Sun2Icon,
   moon: MoonIcon,
+  camera: CameraIcon,
+  map: MapIcon,
 } as const
 
 export type AppIconName = keyof typeof ICONS

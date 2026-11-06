@@ -45,7 +45,7 @@ async function SitacGuidePageContent({ searchParams }: Props) {
       <header className="space-y-4">
         <h1 className={pageTitleClass}>{copy.guide.heading}</h1>
         <p className={pageLeadClass}>{copy.guide.lead}</p>
-        <div className="pt-1">
+        <div className="flex pt-1 [&_a]:w-full sm:[&_a]:w-auto">
           <ButtonLink href={SITAC_APP_URL} variant="secondary" size="sm">
             {copy.guide.openApp}
           </ButtonLink>

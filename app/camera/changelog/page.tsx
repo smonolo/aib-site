@@ -47,7 +47,7 @@ async function CameraChangelogPageContent({ searchParams }: Props) {
       </header>
 
       <article
-        className="aib-prose overflow-hidden rounded-aib bg-aib-surface px-4 py-6 sm:px-8 sm:py-8 dark:bg-aib-surface-dark"
+        className="aib-prose overflow-hidden rounded-aib bg-aib-canvas px-4 py-6 sm:px-8 sm:py-8 dark:bg-aib-canvas-inverse"
         dangerouslySetInnerHTML={{ __html: changelogHtml }}
       />
     </div>

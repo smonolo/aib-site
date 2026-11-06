@@ -1,7 +1,11 @@
+'use client'
+
 import Link from 'next/link'
 import type { ComponentProps, ReactNode } from 'react'
 import { type VariantProps } from 'class-variance-authority'
 import { buttonVariants } from '@/components/ui/button'
+import { uiCopy } from '@/lib/ui-copy'
+import { useSiteLocale } from '@/lib/use-site-locale'
 import { cn } from '@/lib/utils'
 
 type Props = Omit<ComponentProps<typeof Link>, 'href'> &
@@ -27,6 +31,8 @@ export function ButtonLink({
   children,
   ...props
 }: Props) {
+  const locale = useSiteLocale()
+  const opensInNewTab = uiCopy(locale).opensInNewTab
   const classes = cn(buttonVariants({ variant, size }), className)
   const asAnchor =
     Boolean(download) ||
@@ -40,7 +46,7 @@ export function ButtonLink({
     const ariaLabel =
       props['aria-label'] ??
       (opensExternal && textLabel
-        ? `${textLabel} (si apre in una nuova scheda)`
+        ? `${textLabel} (${opensInNewTab})`
         : undefined)
 
     return (

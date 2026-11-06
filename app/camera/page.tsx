@@ -71,7 +71,7 @@ async function CameraHomePageContent({ searchParams }: Props) {
           {copy.home.features.map(feature => (
             <li
               key={feature.title}
-              className="rounded-aib bg-aib-surface px-4 py-4 dark:bg-aib-surface-dark"
+              className="rounded-aib bg-aib-canvas px-4 py-4 dark:bg-aib-canvas-inverse"
             >
               <p className="text-[15px] font-semibold text-aib-fg dark:text-aib-fg-inverse">
                 {feature.title}

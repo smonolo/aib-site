@@ -44,7 +44,7 @@ async function SitacHomePageContent({ searchParams }: Props) {
       <header className="max-w-3xl space-y-4">
         <h1 className={pageTitleClass}>{copy.home.title}</h1>
         <p className={pageLeadClass}>{copy.home.lead}</p>
-        <div className="pt-1">
+        <div className="flex pt-1 [&_a]:w-full sm:[&_a]:w-auto">
           <ButtonLink href={SITAC_APP_URL} size="sm">
             {copy.home.appCta}
           </ButtonLink>
@@ -64,7 +64,7 @@ async function SitacHomePageContent({ searchParams }: Props) {
           {copy.home.features.map(feature => (
             <li
               key={feature.title}
-              className="rounded-aib bg-aib-surface px-4 py-4 dark:bg-aib-surface-dark"
+              className="rounded-aib bg-aib-canvas px-4 py-4 dark:bg-aib-canvas-inverse"
             >
               <p className="text-[15px] font-semibold text-aib-fg dark:text-aib-fg-inverse">
                 {feature.title}

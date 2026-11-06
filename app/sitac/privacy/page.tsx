@@ -64,7 +64,7 @@ async function SitacPrivacyPageContent({ searchParams }: Props) {
 
       <section className="space-y-4">
         <h2 className={h2Class}>{copy.privacy.dataTitle}</h2>
-        <div className="overflow-x-auto rounded-aib bg-aib-surface dark:bg-aib-surface-dark">
+        <div className="overflow-x-auto rounded-aib bg-aib-canvas dark:bg-aib-canvas-inverse">
           <table className="w-full min-w-[36rem] border-collapse text-left text-[13px]">
             <thead>
               <tr>

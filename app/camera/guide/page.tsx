@@ -45,11 +45,10 @@ async function CameraGuidePageContent({ searchParams }: Props) {
           className={`${pageLeadClass} [&_strong]:font-semibold [&_strong]:text-aib-fg dark:[&_strong]:text-aib-fg-inverse`}
           dangerouslySetInnerHTML={{ __html: copy.guide.leadHtml }}
         />
-        <div className="flex flex-col gap-2 pt-1 sm:flex-row sm:flex-wrap sm:gap-3">
+        <div className="flex flex-col gap-2 pt-1 sm:flex-row sm:flex-wrap sm:gap-3 [&_a]:w-full sm:[&_a]:w-auto">
           <ButtonLink
             href={copy.guide.pdfHref}
             download={copy.guide.pdfFilename}
-            variant="secondary"
             size="sm"
           >
             {copy.guide.downloadPdf}
@@ -57,9 +56,8 @@ async function CameraGuidePageContent({ searchParams }: Props) {
           <ButtonLink
             href={copy.guide.pdfHref}
             external
-            variant="ghost"
+            variant="secondary"
             size="sm"
-            className="border border-aib-border-strong dark:border-aib-border-strong-dark"
           >
             {copy.guide.openPdf}
           </ButtonLink>
@@ -67,7 +65,7 @@ async function CameraGuidePageContent({ searchParams }: Props) {
       </header>
 
       <article
-        className="aib-prose overflow-hidden rounded-aib bg-aib-surface px-4 py-6 sm:px-8 sm:py-8 dark:bg-aib-surface-dark"
+        className="aib-prose overflow-hidden rounded-aib bg-aib-canvas px-4 py-6 sm:px-8 sm:py-8 dark:bg-aib-canvas-inverse"
         dangerouslySetInnerHTML={{ __html: guideHtml }}
       />
     </div>

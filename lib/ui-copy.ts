@@ -2,6 +2,7 @@ import type { AibLocale } from '@/lib/locale'
 
 export type UiCopy = {
   skipToContent: string
+  homeAriaLabel: string
   productsNav: string
   languageAndTheme: string
   languageLabel: string
@@ -54,6 +55,7 @@ export type UiCopy = {
 
 const it: UiCopy = {
   skipToContent: 'Vai al contenuto',
+  homeAriaLabel: 'AIB, pagina iniziale',
   productsNav: 'Prodotti AIB',
   languageAndTheme: 'Lingua e tema',
   languageLabel: 'Lingua',
@@ -79,7 +81,7 @@ const it: UiCopy = {
     metaTitle: 'AIB: strumenti indipendenti per antincendio boschivo',
     metaDescription:
       'Home degli strumenti AIB: AIB Camera e AIB SITAC per antincendio boschivo.',
-    title: 'AIB: strumenti indipendenti per il campo',
+    title: 'AIB: strumenti per il campo',
     description:
       'Fotocamera di campo e mappa tattica per antincendio boschivo: AIB Camera e AIB SITAC.',
     productsTitle: 'I prodotti',
@@ -136,6 +138,7 @@ const it: UiCopy = {
 
 const en: UiCopy = {
   skipToContent: 'Skip to content',
+  homeAriaLabel: 'AIB home',
   productsNav: 'AIB products',
   languageAndTheme: 'Language and theme',
   languageLabel: 'Language',
@@ -161,7 +164,7 @@ const en: UiCopy = {
     metaTitle: 'AIB: independent tools for wildfire response',
     metaDescription:
       'Home of the AIB tools: AIB Camera and AIB SITAC for wildfire response.',
-    title: 'AIB: independent tools for the field',
+    title: 'AIB: tools for the field',
     description:
       'Field camera and tactical map for wildfire response: AIB Camera and AIB SITAC.',
     productsTitle: 'Products',
