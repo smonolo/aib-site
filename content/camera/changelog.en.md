@@ -2,10 +2,21 @@
 
 # Changelog: AIB Camera
 
+## 1.2.1 (7 November 2026)
+
+- **Unified map**: Leaflet + OpenStreetMap HOT on **iOS and Android** (no Apple Maps / Google Maps SDK; no API key). Dark mode no longer uses CARTO (their tiles require a key since 2026).
+- Taller map with the same **live stamp** overlay as Camera (replacing the separate info card).
+- Map actions: **Copy**, **Open in Maps**, **Save as photo** (map + pins + stamp into the in-app gallery, same path as a camera shot).
+- Gallery: **3 columns** in portrait, **5** in landscape.
+- **Photos** permission requested early after Camera (like Location), to sync the «AIB Camera» album.
+- Light theme: clearer camera chrome and tab selection; zoom chip black (light) / white (dark).
+- **Android zoom**: correct mapping to the device max zoom; 1× / 2× / 4× chips and more reliable pinch.
+- **Aimed target**: distance presets **1 / 2 / 5 / 10 km**; custom meters field with an **m** suffix; larger pin touch target for dragging.
+- **Coordinate format** in stamp settings (N/E, decimal, DMS), alongside date format.
+
 ## 1.2.0 (5 November 2026)
 
 - **Map tab**: live map of the effective point (Me or Aimed), with stamp-parity location lines, copy/share, and open in the system Maps app.
-- **iOS** uses Apple Maps; **Android** uses Leaflet with OpenStreetMap/CARTO tiles (no Google Maps).
 - Aimed red pin is **draggable** on the map; on drop, meters and bearing update from live GPS.
 - Same **Aim** sheet from Camera and Map.
 - **Photo viewer** with swipe between shots and a bottom filmstrip (share/delete the current shot).

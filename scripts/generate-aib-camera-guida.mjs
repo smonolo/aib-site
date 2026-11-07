@@ -26,9 +26,9 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const outDir = join(root, 'public/docs')
 const assetDir = join(root, 'content/camera/bodies')
 
-const DOC_VERSION_IT = '3 novembre 2026'
-const DOC_VERSION_EN = '3 November 2026'
-const APP_VERSION = '1.0.2'
+const DOC_VERSION_IT = '7 novembre 2026'
+const DOC_VERSION_EN = '7 November 2026'
+const APP_VERSION = '1.2.1'
 
 const docs = [
   {

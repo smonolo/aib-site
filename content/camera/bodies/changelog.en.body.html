@@ -1,14 +1,52 @@
 <h1>Changelog: AIB Camera</h1>
+<h2>1.2.1 (7 November 2026)</h2>
+<ul>
+  <li>
+    <strong>Unified map</strong>: Leaflet + OpenStreetMap HOT on
+    <strong>iOS and Android</strong> (no Apple Maps / Google Maps SDK; no API
+    key). Dark mode no longer uses CARTO (their tiles require a key since 2026).
+  </li>
+  <li>
+    Taller map with the same <strong>live stamp</strong> overlay as Camera
+    (replacing the separate info card).
+  </li>
+  <li>
+    Map actions: <strong>Copy</strong>, <strong>Open in Maps</strong>,
+    <strong>Save as photo</strong> (map + pins + stamp into the in-app gallery,
+    same path as a camera shot).
+  </li>
+  <li>
+    Gallery: <strong>3 columns</strong> in portrait, <strong>5</strong> in
+    landscape.
+  </li>
+  <li>
+    <strong>Photos</strong> permission requested early after Camera (like
+    Location), to sync the «AIB Camera» album.
+  </li>
+  <li>
+    Light theme: clearer camera chrome and tab selection; zoom chip black
+    (light) / white (dark).
+  </li>
+  <li>
+    <strong>Android zoom</strong>: correct mapping to the device max zoom; 1× /
+    2× / 4× chips and more reliable pinch.
+  </li>
+  <li>
+    <strong>Aimed target</strong>: distance presets
+    <strong>1 / 2 / 5 / 10 km</strong>; custom meters field with an
+    <strong>m</strong> suffix; larger pin touch target for dragging.
+  </li>
+  <li>
+    <strong>Coordinate format</strong> in stamp settings (N/E, decimal, DMS),
+    alongside date format.
+  </li>
+</ul>
 <h2>1.2.0 (5 November 2026)</h2>
 <ul>
   <li>
     <strong>Map tab</strong>: live map of the effective point (Me or Aimed),
     with stamp-parity location lines, copy/share, and open in the system Maps
     app.
-  </li>
-  <li>
-    <strong>iOS</strong> uses Apple Maps; <strong>Android</strong> uses Leaflet
-    with OpenStreetMap/CARTO tiles (no Google Maps).
   </li>
   <li>
     Aimed red pin is <strong>draggable</strong> on the map; on drop, meters and

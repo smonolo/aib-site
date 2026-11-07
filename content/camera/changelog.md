@@ -2,10 +2,21 @@
 
 # Novità: AIB Camera
 
+## 1.2.1 (7 novembre 2026)
+
+- **Mappa** unificata: Leaflet + OpenStreetMap HOT su **iOS e Android** (niente Apple Maps / Google Maps SDK; nessuna API key). Dark mode senza CARTO (i tile CARTO richiedono una chiave dal 2026).
+- Mappa più alta con **timbro live** sopra (come in Fotocamera), al posto della scheda testo separata.
+- Azioni mappa: **Copia**, **Apri nelle mappe**, **Salva come foto** (mappa + pin + timbro nella galleria in-app, come uno scatto).
+- Galleria: **3 colonne** in verticale, **5** in orizzontale.
+- Permesso **Foto** chiesto subito dopo la fotocamera (come la posizione), per sincronizzare l’album «AIB Camera».
+- Tema chiaro: chrome fotocamera e selezione tab bar più leggibili; chip zoom nero (chiaro) / bianco (scuro).
+- **Zoom** Android: mapping corretto sul massimo dello zoom del dispositivo; chip 1× / 2× / 4× e pinch più affidabili.
+- **Punto mirato**: preset distanza **1 / 2 / 5 / 10 km**; campo metri libero con suffisso **m**; area di tocco del pin più ampia per trascinarlo.
+- **Formato coordinate** in Configurazione del timbro (N/E, decimali, GMS), come per il formato data.
+
 ## 1.2.0 (5 novembre 2026)
 
 - **Scheda Mappa**: mappa del punto effettivo (Qui o Mirato), con linee di posizione allineate al timbro, copia/condivisione e apertura nell’app Mappe di sistema.
-- **iOS** usa Apple Maps; **Android** usa Leaflet con tile OpenStreetMap/CARTO (senza Google Maps).
 - Pin rosso del punto mirato **trascinabile** sulla mappa: al rilascio aggiorna metri e direzione dal GPS live.
 - Stesso foglio **Punta** da Fotocamera e da Mappa.
 - **Visualizzatore foto** con scorrimento tra gli scatti e filmstrip in basso (condivisione ed eliminazione dello scatto corrente).

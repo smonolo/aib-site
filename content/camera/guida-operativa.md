@@ -5,7 +5,7 @@
 <table class="doc-meta">
   <tbody>
     <tr><td><strong>Versione documento</strong></td><td>5 novembre 2026</td></tr>
-    <tr><td><strong>Versione app di riferimento</strong></td><td>1.2.0</td></tr>
+    <tr><td><strong>Versione app di riferimento</strong></td><td>1.2.1</td></tr>
     <tr><td><strong>Lingua</strong></td><td>Italiano</td></tr>
     <tr><td><strong>Sito</strong></td><td><a href="https://smnl.dev/aib-camera">smnl.dev/aib-camera</a></td></tr>
     <tr><td><strong>Privacy</strong></td><td><a href="https://smnl.dev/aib-camera/privacy">smnl.dev/aib-camera/privacy</a></td></tr>
@@ -40,7 +40,7 @@
 
 Questa guida spiega, in italiano, come funziona AIB Camera sul campo: permessi, scatto, timbro sulle foto, galleria, registro scatti e uso senza rete.
 
-È pensata per **chiunque** usi l’app: cittadini, volontari o altri, per documentare un incendio boschivo (AIB) o una situazione simile. Descrive il comportamento reale della versione **1.2.0**.
+È pensata per **chiunque** usi l’app: cittadini, volontari o altri, per documentare un incendio boschivo (AIB) o una situazione simile. Descrive il comportamento reale della versione **1.2.1**.
 
 ---
 
@@ -78,7 +78,7 @@ L’app **non** è realizzata, approvata né affiliata a Protezione Civile, Vigi
 | Punto mirato     | Distanza + direzione bussola da GPS: stima le coordinate di ciò a cui punti; commutatore Qui ↔ Mirato; etichetta «stimato» sul timbro              |
 | Anteprima live   | Sul mirino compare lo stesso blocco che verrà bruciato sulla foto                                                                                  |
 | Scatto rapido    | Si possono scattare più foto di seguito; il timbro viene elaborato in coda, una foto alla volta                                                    |
-| Scheda Mappa     | Punto Qui/Mirato sulla mappa; stesse info del timbro; copia, condivisione testo + link mappe, apri in Mappe                                        |
+| Scheda Mappa     | Punto Qui/Mirato sulla mappa; stesse info del timbro; copia, apri in Mappe, salva mappa come foto in galleria                                      |
 | Galleria in-app  | Fonte di verità: le foto restano nell’app anche senza permesso alla libreria Foto                                                                  |
 | Album di sistema | Copia nell’album «AIB Camera» se il permesso Foto è concesso (non garantita)                                                                       |
 | Registro scatti  | Elenco locale solo in aggiunta: ID scatto, data/ora, coordinate; esportabile in CSV con `install_id`                                               |
@@ -174,7 +174,7 @@ Per usare le coordinate di ciò a cui stai **puntando** (es. un focolaio a 200 m
 1. Assicurati che GPS e bussola siano disponibili.
 2. Orientati verso il punto di interesse (la stima usa la direzione della bussola).
 3. Apri **Punta**: sulla fotocamera (icona o pressione lunga sul mirino) oppure sulla mappa (icona mirino in alto a destra). Si apre lo stesso foglio a tutta larghezza (chiudi con ✕ o toccando fuori).
-4. Scegli un preset (**100 / 250 / 500 / 1000** m) o digita i metri, poi **Blocca punto**.
+4. Scegli un preset (**1 / 2 / 5 / 10** km) o digita i metri (campo con suffisso **m**), poi **Blocca punto**.
 5. Sul timbro e sulla mappa compaiono le coordinate stimate e l’etichetta **Punto mirato (stimato)**.
 6. Usa **Qui ↔ Mirato** su fotocamera o mappa senza perdere il punto; **Cancella punto** (nel foglio Punta) lo elimina.
 
@@ -218,11 +218,19 @@ Fino a **4 righe** libere (es. nome squadra o turno). Vuoto di default: non comp
 | **Breve**    | Data e ora compatte (**predefinito**) |
 | **ISO**      | Formato ISO con fuso Europe/Rome      |
 
-### 8.4 Dimensione testo
+### 8.4 Formato coordinate
+
+| Opzione      | Descrizione                                   |
+| ------------ | --------------------------------------------- |
+| **N/E**      | Gradi decimali con emisfero (**predefinito**) |
+| **Decimali** | Latitudine, longitudine in gradi decimali     |
+| **GMS**      | Gradi, primi e secondi con emisfero           |
+
+### 8.5 Dimensione testo
 
 Piccolo / **Medio** (predefinito) / Grande.
 
-### 8.5 Opacità dello sfondo del timbro
+### 8.6 Opacità dello sfondo del timbro
 
 Da **0%** (solo testo; con ombra per la leggibilità) a **100%**, a step del 25%. Predefinito: **0%**.
 
@@ -237,17 +245,18 @@ La scheda **Mappa** mostra il punto geo **effettivo** usato anche dal timbro:
 - mappa con il pallino blu di sistema (e cono di direzione se la bussola è disponibile) su **Qui**; sul **punto mirato** un pin rosso, con il pallino blu che resta sulla tua posizione;
 - icona **Punta** in alto a destra: apre lo stesso foglio della fotocamera (blocca, modifica distanza, cancella);
 - se un punto mirato è attivo, puoi alternare **Qui ↔ Mirato** anche da qui, e **trascinare il pin rosso** sulla mappa: al rilascio il punto bloccato e la distanza in metri si aggiornano rispetto alla tua posizione;
-- le stesse righe informative del timbro (data/ora, coordinate, meta, luogo, secondo gli interruttori in Configurazione);
-- **Copia** il testo negli appunti; **Condividi** apre il foglio di sistema con testo + link mappe; **Apri nelle mappe** apre Apple Maps / Google Maps.
+- sullo stesso riquadro della mappa, il **timbro live** come in Fotocamera (data/ora, coordinate, meta, luogo e testo personalizzato, secondo la Configurazione);
+- **Copia** il testo negli appunti; **Apri nelle mappe** apre Apple Maps / Google Maps; **Salva come foto** cattura la mappa (con i pin) e la salva in Foto dell’app con lo stesso timbro delle scatti dalla fotocamera.
 
-Senza GPS la scheda resta utilizzabile: compare un avviso e non c’è marker. I tile richiedono rete: su **iOS** Apple Maps, su **Android** Leaflet con OpenStreetMap (nessuna chiave Google Maps). Copia e condivisione del testo funzionano comunque quando le coordinate sono disponibili.
+Senza GPS la scheda resta utilizzabile: compare un avviso e non c’è marker. I tile richiedono rete: su **iOS** e **Android** Leaflet con OpenStreetMap HOT (nessuna chiave API). Copia e condivisione del testo funzionano comunque quando le coordinate sono disponibili.
 
 ---
 
 ## 10. Galleria (scheda Foto)
 
 - Le foto sono raggruppate per giorno (fuso Europe/Rome), con intestazioni tipo _Oggi_ / _Ieri_.
-- Griglia a **5 colonne** di miniature quadrate.
+- Griglia di miniature quadrate: **3 colonne** in verticale, **5** in orizzontale.
+- Il permesso **Foto** (album di sistema) viene chiesto subito dopo la fotocamera, come la posizione; resta opzionale.
 - Toccare una miniatura apre il **visualizzatore**: scorri le foto (swipe o filmstrip sotto), poi **Condividi** / **Elimina**.
 - Modalità selezione: pulsante **Seleziona** oppure pressione prolungata su una miniatura; quindi condivisione o eliminazione multipla.
 
@@ -329,7 +338,7 @@ Chi usa l’app deve tenere presenti questi punti:
 3. **Data e ora sul timbro** usano sempre Europe/Rome; verificare che l’orologio del telefono sia impostato correttamente.
 4. **Album «AIB Camera»** è una copia di comodo: sul dispositivo la copia affidabile è la **galleria in-app**.
 5. **Privacy:** foto, impostazioni e registro restano sul dispositivo; non c’è sincronizzazione cloud gestita dallo sviluppatore. La condivisione verso terzi è scelta di chi usa l’app.
-6. **Aggiornamenti:** questa guida si riferisce alla versione app **1.2.0**; in caso di release successive verificare eventuali differenze su [smnl.dev/aib-camera](https://smnl.dev/aib-camera).
+6. **Aggiornamenti:** questa guida si riferisce alla versione app **1.2.1**; in caso di release successive verificare eventuali differenze su [smnl.dev/aib-camera](https://smnl.dev/aib-camera).
 
 ---
 
@@ -360,4 +369,4 @@ Chi usa l’app deve tenere presenti questi punti:
 
 ---
 
-_Documento non ufficiale · Versione app di riferimento 1.2.0 · Stampabile · © Stefano Monolo: smnl.dev_
+_Documento non ufficiale · Versione app di riferimento 1.2.1 · Stampabile · © Stefano Monolo: smnl.dev_

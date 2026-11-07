@@ -7,7 +7,7 @@
     </tr>
     <tr>
       <td><strong>Reference app version</strong></td>
-      <td>1.2.0</td>
+      <td>1.2.1</td>
     </tr>
     <tr>
       <td><strong>Language</strong></td>
@@ -71,9 +71,9 @@
   network.
 </p>
 <p>
-  It is for <strong>anyone</strong> who uses the app. citizens, volunteers, or
-  others. to document a wildfire (AIB) or similar situation. It describes the
-  real behavior of version <strong>1.2.0</strong>.
+  It is for <strong>anyone</strong> who uses the app: citizens, volunteers, or
+  others, to document a wildfire (AIB) or similar situation. It describes the
+  real behavior of version <strong>1.2.1</strong>.
 </p>
 <hr />
 <h2>2. What AIB Camera is</h2>
@@ -86,7 +86,7 @@
 <ul>
   <li>take photos with the rear camera;</li>
   <li>
-    print on the JPEG (visual stamp) date, time, position, and. when available .
+    print on the JPEG (visual stamp) date, time, position, and, when available,
     place and other context;
   </li>
   <li>keep photos in an <strong>in-app gallery</strong>;</li>
@@ -105,7 +105,7 @@
   emergency it must always be possible to capture and share.
 </p>
 <aside class="callout callout-warn">
-  <p><strong>Notice. not institutional</strong></p>
+  <p><strong>Notice: not institutional</strong></p>
   <p>
     The app is <strong>not</strong> built, endorsed, or affiliated with Civil
     Protection, the Fire Service, Regione Lombardia, or other public
@@ -155,8 +155,8 @@
     <tr>
       <td>Map tab</td>
       <td>
-        Me/Aimed point on the map; same stamp info; copy, share text + maps
-        link, open in Maps
+        Me/Aimed point on the map; same stamp info; copy, open in Maps, save map
+        as a stamped in-app photo
       </td>
     </tr>
     <tr>
@@ -302,8 +302,8 @@
   <li><strong>Camera</strong>. capture and stamp preview</li>
   <li>
     <strong>Map</strong>. effective point (Me or Aimed), the same
-    <strong>Aim</strong> sheet as Camera, stamp-parity info, copy / share, and
-    open in system Maps
+    <strong>Aim</strong> sheet as Camera, stamp-parity info, copy, open in
+    system Maps, and save the map as a stamped in-app photo
   </li>
   <li><strong>Photos</strong>. in-app gallery</li>
   <li>
@@ -336,7 +336,7 @@
   <li>
     top: date/time, optional <strong>Aimed target (estimated)</strong> line,
     coordinates, meta (estimated distance / accuracy / altitude / heading),
-    place. per Stamp settings toggles;
+    place, per Stamp settings toggles;
   </li>
   <li>bottom: custom text, if filled in.</li>
 </ul>
@@ -431,8 +431,8 @@
     sheet opens (dismiss with ✕ or tap outside).
   </li>
   <li>
-    Pick a preset (<strong>100 / 250 / 500 / 1000</strong> m) or type meters,
-    then <strong>Lock target</strong>.
+    Pick a preset (<strong>1 / 2 / 5 / 10</strong> km) or type meters (field
+    with an <strong>m</strong> suffix), then <strong>Lock target</strong>.
   </li>
   <li>
     Stamp and map show estimated coordinates and the label
@@ -515,9 +515,32 @@
     </tr>
   </tbody>
 </table>
-<h3>8.4 Text size</h3>
+<h3>8.4 Coordinate format</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>N/E</strong></td>
+      <td>Decimal degrees with hemisphere (<strong>default</strong>)</td>
+    </tr>
+    <tr>
+      <td><strong>Decimal</strong></td>
+      <td>Latitude, longitude in decimal degrees</td>
+    </tr>
+    <tr>
+      <td><strong>DMS</strong></td>
+      <td>Degrees, minutes, and seconds with hemisphere</td>
+    </tr>
+  </tbody>
+</table>
+<h3>8.5 Text size</h3>
 <p>Small / <strong>Medium</strong> (default) / Large.</p>
-<h3>8.5 Stamp background opacity</h3>
+<h3>8.6 Stamp background opacity</h3>
 <p>
   From <strong>0%</strong> (text only; with shadow for readability) to
   <strong>100%</strong>, in 25% steps. Default: <strong>0%</strong>.
@@ -543,26 +566,26 @@
     change distance, clear);
   </li>
   <li>
-    if an aimed point is active, you can toggle
-    <strong>Me ↔ Aimed</strong> here too, and
-    <strong>drag the red pin</strong> on the map: on release the locked point
-    and distance in meters update from your position;
+    if an aimed point is active, you can toggle <strong>Me ↔ Aimed</strong> here
+    too, and <strong>drag the red pin</strong> on the map: on release the locked
+    point and distance in meters update from your position;
   </li>
   <li>
-    the same stamp info lines (date/time, coordinates, meta, place. per Stamp
-    settings toggles);
+    on the map itself, the same <strong>live stamp</strong> as Camera
+    (date/time, coordinates, meta, place, and custom text, per Stamp settings);
   </li>
   <li>
     <strong>Copy</strong> puts the text on the clipboard;
-    <strong>Share</strong> opens the system sheet with text + a maps link;
-    <strong>Open in Maps</strong> opens Apple Maps / Google Maps.
+    <strong>Open in Maps</strong> opens Apple Maps / Google Maps;
+    <strong>Save as photo</strong> captures the map (with pins) and saves it
+    into the in-app Photos gallery with the same stamp as a camera shot.
   </li>
 </ul>
 <p>
   Without GPS the tab stays usable: a hint appears and there is no marker. Map
-  tiles need a network: <strong>iOS</strong> Apple Maps,
-  <strong>Android</strong> Leaflet with OpenStreetMap (no Google Maps key). Copy
-  and share of the text still work when coordinates are available.
+  tiles need a network: on <strong>iOS</strong> and <strong>Android</strong>,
+  Leaflet with OpenStreetMap HOT (no API key). Copy and opening Maps still work
+  when coordinates are available.
 </p>
 <hr />
 <h2>10. Gallery (Photos tab)</h2>
@@ -571,7 +594,14 @@
     Photos are grouped by day (Europe/Rome timezone), with headers like
     <em>Today</em> / <em>Yesterday</em>.
   </li>
-  <li><strong>5-column</strong> grid of square thumbnails.</li>
+  <li>
+    Grid of square thumbnails: <strong>3 columns</strong> in portrait,
+    <strong>5</strong> in landscape.
+  </li>
+  <li>
+    <strong>Photos</strong> library permission is requested early after Camera,
+    like Location; it remains optional.
+  </li>
   <li>
     Tap a thumbnail to open the <strong>viewer</strong>: browse shots (swipe or
     the filmstrip below), then <strong>Share</strong> / <strong>Delete</strong>.
@@ -665,7 +695,7 @@
 </ul>
 <aside class="callout callout-warn">
   <p>
-    <strong>Caution. EXIF not guaranteed:</strong> if the native module is
+    <strong>Caution: EXIF not guaranteed:</strong> if the native module is
     unavailable on the installed build,
     <strong>stamped photo, gallery, and log remain valid</strong>. Only metadata
     write into the file is missing. Do not treat EXIF as automatic legal proof:
@@ -742,7 +772,7 @@
   </li>
   <li>
     <strong>Updates:</strong> this guide refers to app version
-    <strong>1.2.0</strong>; for later releases check for differences on
+    <strong>1.2.1</strong>; for later releases check for differences on
     <a href="https://smnl.dev/aib-camera">smnl.dev/aib-camera</a>.
   </li>
 </ol>
@@ -828,7 +858,7 @@
 <hr />
 <p>
   <em
-    >Unofficial document · Reference app version 1.2.0 · Printable · © Stefano
-    Monolo. smnl.dev</em
+    >Unofficial document · Reference app version 1.2.1 · Printable · © Stefano
+    Monolo: smnl.dev</em
   >
 </p>

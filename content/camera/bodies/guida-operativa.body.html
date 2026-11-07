@@ -7,7 +7,7 @@
     </tr>
     <tr>
       <td><strong>Versione app di riferimento</strong></td>
-      <td>1.2.0</td>
+      <td>1.2.1</td>
     </tr>
     <tr>
       <td><strong>Lingua</strong></td>
@@ -71,9 +71,9 @@
   rete.
 </p>
 <p>
-  È pensata per <strong>chiunque</strong> usi l’app. cittadini, volontari o
-  altri. per documentare un incendio boschivo (AIB) o una situazione simile.
-  Descrive il comportamento reale della versione <strong>1.2.0</strong>.
+  È pensata per <strong>chiunque</strong> usi l’app: cittadini, volontari o
+  altri, per documentare un incendio boschivo (AIB) o una situazione simile.
+  Descrive il comportamento reale della versione <strong>1.2.1</strong>.
 </p>
 <hr />
 <h2>2. Cos’è AIB Camera</h2>
@@ -87,7 +87,7 @@
 <ul>
   <li>scattare foto con la fotocamera posteriore;</li>
   <li>
-    stampare sul JPEG (timbro visivo) data, ora, posizione e. se disponibili :
+    stampare sul JPEG (timbro visivo) data, ora, posizione e, se disponibili,
     luogo e altri dati di contesto;
   </li>
   <li>conservare le foto in una <strong>galleria interna all’app</strong>;</li>
@@ -110,7 +110,7 @@
   >: in emergenza deve sempre essere possibile scattare e condividere.
 </p>
 <aside class="callout callout-warn">
-  <p><strong>Avviso. natura non istituzionale</strong></p>
+  <p><strong>Avviso: natura non istituzionale</strong></p>
   <p>
     L’app <strong>non</strong> è realizzata, approvata né affiliata a Protezione
     Civile, Vigili del Fuoco, Regione Lombardia o altri enti pubblici. Non
@@ -159,8 +159,8 @@
     <tr>
       <td>Scheda Mappa</td>
       <td>
-        Punto Qui/Mirato sulla mappa; stesse info del timbro; copia,
-        condivisione testo + link mappe, apri in Mappe
+        Punto Qui/Mirato sulla mappa; stesse info del timbro; copia, apri in
+        Mappe, salva mappa come foto in galleria
       </td>
     </tr>
     <tr>
@@ -352,7 +352,7 @@
   <li>
     in alto: data/ora, eventuale riga <strong>Punto mirato (stimato)</strong>,
     coordinate, meta (distanza stimata / precisione / altitudine / direzione),
-    luogo. secondo gli interruttori in Configurazione;
+    luogo, secondo gli interruttori in Configurazione;
   </li>
   <li>in basso: testo personalizzato, se compilato.</li>
 </ul>
@@ -455,8 +455,8 @@
     stesso foglio a tutta larghezza (chiudi con ✕ o toccando fuori).
   </li>
   <li>
-    Scegli un preset (<strong>100 / 250 / 500 / 1000</strong> m) o digita i
-    metri, poi <strong>Blocca punto</strong>.
+    Scegli un preset (<strong>1 / 2 / 5 / 10</strong> km) o digita i metri
+    (campo con suffisso <strong>m</strong>), poi <strong>Blocca punto</strong>.
   </li>
   <li>
     Sul timbro e sulla mappa compaiono le coordinate stimate e l’etichetta
@@ -542,9 +542,32 @@
     </tr>
   </tbody>
 </table>
-<h3>8.4 Dimensione testo</h3>
+<h3>8.4 Formato coordinate</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Opzione</th>
+      <th>Descrizione</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>N/E</strong></td>
+      <td>Gradi decimali con emisfero (<strong>predefinito</strong>)</td>
+    </tr>
+    <tr>
+      <td><strong>Decimali</strong></td>
+      <td>Latitudine, longitudine in gradi decimali</td>
+    </tr>
+    <tr>
+      <td><strong>GMS</strong></td>
+      <td>Gradi, primi e secondi con emisfero</td>
+    </tr>
+  </tbody>
+</table>
+<h3>8.5 Dimensione testo</h3>
 <p>Piccolo / <strong>Medio</strong> (predefinito) / Grande.</p>
-<h3>8.5 Opacità dello sfondo del timbro</h3>
+<h3>8.6 Opacità dello sfondo del timbro</h3>
 <p>
   Da <strong>0%</strong> (solo testo; con ombra per la leggibilità) a
   <strong>100%</strong>, a step del 25%. Predefinito: <strong>0%</strong>.
@@ -576,21 +599,23 @@
     bloccato e la distanza in metri si aggiornano rispetto alla tua posizione;
   </li>
   <li>
-    le stesse righe informative del timbro (data/ora, coordinate, meta, luogo :
-    secondo gli interruttori in Configurazione);
+    sullo stesso riquadro della mappa, il <strong>timbro live</strong> come in
+    Fotocamera (data/ora, coordinate, meta, luogo e testo personalizzato,
+    secondo la Configurazione);
   </li>
   <li>
     <strong>Copia</strong> il testo negli appunti;
-    <strong>Condividi</strong> apre il foglio di sistema con testo + link mappe;
-    <strong>Apri nelle mappe</strong> apre Apple Maps / Google Maps.
+    <strong>Apri nelle mappe</strong> apre Apple Maps / Google Maps;
+    <strong>Salva come foto</strong> cattura la mappa (con i pin) e la salva in
+    Foto dell’app con lo stesso timbro delle scatti dalla fotocamera.
   </li>
 </ul>
 <p>
   Senza GPS la scheda resta utilizzabile: compare un avviso e non c’è marker. I
-  tile richiedono rete: su <strong>iOS</strong> Apple Maps, su
-  <strong>Android</strong> Leaflet con OpenStreetMap (nessuna chiave Google
-  Maps). Copia e condivisione del testo funzionano comunque quando le coordinate
-  sono disponibili.
+  tile richiedono rete: su <strong>iOS</strong> e
+  <strong>Android</strong> Leaflet con OpenStreetMap HOT (nessuna chiave API).
+  Copia e condivisione del testo funzionano comunque quando le coordinate sono
+  disponibili.
 </p>
 <hr />
 <h2>10. Galleria (scheda Foto)</h2>
@@ -599,7 +624,14 @@
     Le foto sono raggruppate per giorno (fuso Europe/Rome), con intestazioni
     tipo <em>Oggi</em> / <em>Ieri</em>.
   </li>
-  <li>Griglia a <strong>5 colonne</strong> di miniature quadrate.</li>
+  <li>
+    Griglia di miniature quadrate: <strong>3 colonne</strong> in verticale,
+    <strong>5</strong> in orizzontale.
+  </li>
+  <li>
+    Il permesso <strong>Foto</strong> (album di sistema) viene chiesto subito
+    dopo la fotocamera, come la posizione; resta opzionale.
+  </li>
   <li>
     Toccare una miniatura apre il <strong>visualizzatore</strong>: scorri le
     foto (swipe o filmstrip sotto), poi <strong>Condividi</strong> /
@@ -699,7 +731,7 @@
 </ul>
 <aside class="callout callout-warn">
   <p>
-    <strong>Attenzione. EXIF non garantito:</strong> se il modulo nativo non è
+    <strong>Attenzione: EXIF non garantito:</strong> se il modulo nativo non è
     disponibile sulla build installata,
     <strong>foto timbrata, galleria e registro restano validi</strong>. Manca
     solo la scrittura dei metadati nel file. Non trattare l’EXIF come prova
@@ -778,7 +810,7 @@
   </li>
   <li>
     <strong>Aggiornamenti:</strong> questa guida si riferisce alla versione app
-    <strong>1.2.0</strong>; in caso di release successive verificare eventuali
+    <strong>1.2.1</strong>; in caso di release successive verificare eventuali
     differenze su <a href="https://smnl.dev/aib-camera">smnl.dev/aib-camera</a>.
   </li>
 </ol>
@@ -864,7 +896,7 @@
 <hr />
 <p>
   <em
-    >Documento non ufficiale · Versione app di riferimento 1.2.0 · Stampabile ·
-    © Stefano Monolo. smnl.dev</em
+    >Documento non ufficiale · Versione app di riferimento 1.2.1 · Stampabile ·
+    © Stefano Monolo: smnl.dev</em
   >
 </p>
