@@ -5,7 +5,7 @@
 <table class="doc-meta">
   <tbody>
     <tr><td><strong>Versione documento</strong></td><td>5 novembre 2026</td></tr>
-    <tr><td><strong>Versione app di riferimento</strong></td><td>1.2.1</td></tr>
+    <tr><td><strong>Versione app di riferimento</strong></td><td>1.2.2</td></tr>
     <tr><td><strong>Lingua</strong></td><td>Italiano</td></tr>
     <tr><td><strong>Sito</strong></td><td><a href="https://smnl.dev/aib-camera">smnl.dev/aib-camera</a></td></tr>
     <tr><td><strong>Privacy</strong></td><td><a href="https://smnl.dev/aib-camera/privacy">smnl.dev/aib-camera/privacy</a></td></tr>
@@ -40,7 +40,7 @@
 
 Questa guida spiega, in italiano, come funziona AIB Camera sul campo: permessi, scatto, timbro sulle foto, galleria, registro scatti e uso senza rete.
 
-È pensata per **chiunque** usi l’app: cittadini, volontari o altri, per documentare un incendio boschivo (AIB) o una situazione simile. Descrive il comportamento reale della versione **1.2.1**.
+È pensata per **chiunque** usi l’app: cittadini, volontari o altri, per documentare un incendio boschivo (AIB) o una situazione simile. Descrive il comportamento reale della versione **1.2.2**.
 
 ---
 
@@ -72,19 +72,19 @@ L’app **non** è realizzata, approvata né affiliata a Protezione Civile, Vigi
 
 ### Cosa fa
 
-| Funzione         | Dettaglio                                                                                                                                          |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Timbro sul JPEG  | Data/ora (fuso **Europe/Rome**), coordinate, precisione, altitudine, direzione, luogo e testo personalizzato, secondo la Configurazione del timbro |
-| Punto mirato     | Distanza + direzione bussola da GPS: stima le coordinate di ciò a cui punti; commutatore Qui ↔ Mirato; etichetta «stimato» sul timbro              |
-| Anteprima live   | Sul mirino compare lo stesso blocco che verrà bruciato sulla foto                                                                                  |
-| Scatto rapido    | Si possono scattare più foto di seguito; il timbro viene elaborato in coda, una foto alla volta                                                    |
-| Scheda Mappa     | Punto Qui/Mirato sulla mappa; stesse info del timbro; copia, apri in Mappe, salva mappa come foto in galleria                                      |
-| Galleria in-app  | Fonte di verità: le foto restano nell’app anche senza permesso alla libreria Foto                                                                  |
-| Album di sistema | Copia nell’album «AIB Camera» se il permesso Foto è concesso (non garantita)                                                                       |
-| Registro scatti  | Elenco locale solo in aggiunta: ID scatto, data/ora, coordinate; esportabile in CSV con `install_id`                                               |
-| ID installazione | UUID stabile per installazione (Impostazioni, tocca per copiare); coincide con la colonna CSV                                                      |
-| EXIF             | Tentativo di scrittura di identificativo, GPS e commento macchina sul JPEG (non sempre disponibile)                                                |
-| Offline          | Scatto, timbro, galleria, registro e condivisione non richiedono rete                                                                              |
+| Funzione         | Dettaglio                                                                                                                                                             |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Timbro sul JPEG  | Data/ora (fuso **Europe/Rome**), coordinate, precisione, altitudine, direzione, vento (se online), luogo e testo personalizzato, secondo la Configurazione del timbro |
+| Punto mirato     | Distanza + direzione bussola da GPS: stima le coordinate di ciò a cui punti; commutatore Qui ↔ Mirato; etichetta «stimato» sul timbro                                 |
+| Anteprima live   | Sul mirino compare lo stesso blocco che verrà bruciato sulla foto                                                                                                     |
+| Scatto rapido    | Si possono scattare più foto di seguito; il timbro viene elaborato in coda, una foto alla volta                                                                       |
+| Scheda Mappa     | Punto Qui/Mirato sulla mappa; stesse info del timbro; copia, apri in Mappe, salva mappa come foto in galleria                                                         |
+| Galleria in-app  | Fonte di verità: le foto restano nell’app anche senza permesso alla libreria Foto                                                                                     |
+| Album di sistema | Copia nell’album «AIB Camera» se il permesso Foto è concesso (non garantita)                                                                                          |
+| Registro scatti  | Elenco locale solo in aggiunta: ID scatto, data/ora, coordinate; esportabile in CSV con `install_id`                                                                  |
+| ID installazione | UUID stabile per installazione (Impostazioni, tocca per copiare); coincide con la colonna CSV                                                                         |
+| EXIF             | Tentativo di scrittura di identificativo, GPS e commento macchina sul JPEG (non sempre disponibile)                                                                   |
+| Offline          | Scatto, timbro, galleria, registro e condivisione non richiedono rete                                                                                                 |
 
 ### Cosa non fa
 
@@ -147,7 +147,7 @@ In **verticale**, l’anteprima live ha **bande nere** sopra e sotto. In alto: *
 
 Sul mirino compare lo stesso blocco che verrà **bruciato** sul JPEG:
 
-- in alto: data/ora, eventuale riga **Punto mirato (stimato)**, coordinate, meta (distanza stimata / precisione / altitudine / direzione), luogo, secondo gli interruttori in Configurazione;
+- in alto: data/ora, eventuale riga **Punto mirato (stimato)**, coordinate, meta (distanza stimata / precisione / altitudine / direzione / vento), luogo, secondo gli interruttori in Configurazione;
 - in basso: testo personalizzato, se compilato.
 
 Carattere, dimensione del testo e opacità dello sfondo seguono la **Configurazione** (icona in alto a destra sulla fotocamera). L’anteprima coincide con ciò che finirà sulla foto (anteprima e timbro bruciato scalano dal lato corto del fotogramma). La **direzione** (bussola) resta allineata a ciò che inquadra la fotocamera anche in orizzontale.
@@ -205,6 +205,7 @@ Percorso: icona cursori sulla **fotocamera**. foglio a tutta larghezza e altezza
 - Precisione GPS
 - Altitudine
 - Direzione (bussola)
+- Vento (condizioni attuali da Open-Meteo; cache locale; omesso offline)
 
 ### 8.2 Testo personalizzato
 
@@ -312,10 +313,10 @@ Dopo il timbro l’app prova a scrivere sul JPEG, tra l’altro:
 ## 13. Uso offline e luogo
 
 - Scatto, timbro, galleria, registro e condivisione **non richiedono rete**.
-- La rete serve solo per la **geocodifica inversa** (coordinate → etichetta di luogo), se il campo Luogo è attivo e c’è connessione.
-- Le etichette recenti restano in **cache locale** e possono essere riusate offline nelle vicinanze (raggio circa **2,5 km**).
+- La rete serve per la **geocodifica inversa** (coordinate → etichetta di luogo), se il campo Luogo è attivo e c’è connessione, e per il **vento attuale** (Open-Meteo) sul punto effettivo del timbro se Vento è attivo.
+- Etichette di luogo e campioni di vento recenti restano in **cache locale** e possono essere riusati offline nelle vicinanze (raggio circa **2–2,5 km**). Lo scatto **non attende** la richiesta vento: usa la cache o omette il campo.
 
-Senza rete o senza GPS, il timbro mostra i testi di fallback (_Coordinate non disponibili_, _Luogo non disponibile_) senza bloccare lo scatto.
+Senza rete o senza GPS, il timbro mostra i testi di fallback (_Coordinate non disponibili_, _Luogo non disponibile_) e omette il vento, senza bloccare lo scatto.
 
 Su dispositivi più vecchi o con moduli nativi limitati, l’app **degrada in silenzio**: se il timbro Skia fallisce resta il JPEG non timbrato in galleria; senza EXIF nativo restano foto + galleria + registro; senza permesso Foto resta solo la galleria in-app; font e vibrazione usano fallback di sistema. Lo scatto non deve bloccarsi per questi dettagli.
 
@@ -338,7 +339,7 @@ Chi usa l’app deve tenere presenti questi punti:
 3. **Data e ora sul timbro** usano sempre Europe/Rome; verificare che l’orologio del telefono sia impostato correttamente.
 4. **Album «AIB Camera»** è una copia di comodo: sul dispositivo la copia affidabile è la **galleria in-app**.
 5. **Privacy:** foto, impostazioni e registro restano sul dispositivo; non c’è sincronizzazione cloud gestita dallo sviluppatore. La condivisione verso terzi è scelta di chi usa l’app.
-6. **Aggiornamenti:** questa guida si riferisce alla versione app **1.2.1**; in caso di release successive verificare eventuali differenze su [smnl.dev/aib-camera](https://smnl.dev/aib-camera).
+6. **Aggiornamenti:** questa guida si riferisce alla versione app **1.2.2**; in caso di release successive verificare eventuali differenze su [smnl.dev/aib-camera](https://smnl.dev/aib-camera).
 
 ---
 
@@ -369,4 +370,4 @@ Chi usa l’app deve tenere presenti questi punti:
 
 ---
 
-_Documento non ufficiale · Versione app di riferimento 1.2.1 · Stampabile · © Stefano Monolo: smnl.dev_
+_Documento non ufficiale · Versione app di riferimento 1.2.2 · Stampabile · © Stefano Monolo: smnl.dev_

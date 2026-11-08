@@ -2,6 +2,15 @@
 
 # Changelog: AIB Camera
 
+## 1.2.2 (8 November 2026)
+
+- **Current wind** on the stamp (Camera and Map): speed and direction from Open-Meteo for the effective point (Me or Aimed).
+- **Wind** toggle in Stamp settings; local cache; omitted offline; shutter never waits on the network request.
+- Altitude on the stamp without the “a.s.l.” / «s.l.m.» suffix (meters only).
+- Place on the stamp: wider wrap (typically at most **2 lines**).
+- Aim sheet label: **Distance** (no “(m)”; the `m` suffix stays on the field).
+- Aimed target: removed the **50 km** distance cap (typed distance and map drag).
+
 ## 1.2.1 (7 November 2026)
 
 - **Unified map**: Leaflet + OpenStreetMap HOT on **iOS and Android** (no Apple Maps / Google Maps SDK; no API key). Dark mode no longer uses CARTO (their tiles require a key since 2026).

@@ -5,7 +5,7 @@
 <table class="doc-meta">
   <tbody>
     <tr><td><strong>Document version</strong></td><td>5 November 2026</td></tr>
-    <tr><td><strong>Reference app version</strong></td><td>1.2.1</td></tr>
+    <tr><td><strong>Reference app version</strong></td><td>1.2.2</td></tr>
     <tr><td><strong>Language</strong></td><td>English</td></tr>
     <tr><td><strong>Site</strong></td><td><a href="https://smnl.dev/aib-camera">smnl.dev/aib-camera</a></td></tr>
     <tr><td><strong>Privacy</strong></td><td><a href="https://smnl.dev/aib-camera/privacy">smnl.dev/aib-camera/privacy</a></td></tr>
@@ -40,7 +40,7 @@
 
 This guide explains, in English, how AIB Camera works in the field: permissions, capture, stamping photos, gallery, capture log, and use without a network.
 
-It is for **anyone** who uses the app: citizens, volunteers, or others, to document a wildfire (AIB) or similar situation. It describes the real behavior of version **1.2.1**.
+It is for **anyone** who uses the app: citizens, volunteers, or others, to document a wildfire (AIB) or similar situation. It describes the real behavior of version **1.2.2**.
 
 ---
 
@@ -72,19 +72,19 @@ The app is **not** built, endorsed, or affiliated with Civil Protection, the Fir
 
 ### What it does
 
-| Feature        | Detail                                                                                                                              |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| Stamp on JPEG  | Date/time (**Europe/Rome** timezone), coordinates, accuracy, altitude, heading, place, and custom text, per Stamp settings          |
-| Aimed target   | Distance + compass heading from GPS: estimates coordinates of what you point at; Me ↔ Target toggle; “estimated” label on the stamp |
-| Live preview   | The viewfinder shows the same block that will be burned into the photo                                                              |
-| Fast capture   | You can take several photos in a row; the stamp is processed in a queue, one photo at a time                                        |
-| Map tab        | Me/Aimed point on the map; same stamp info; copy, open in Maps, save map as a stamped in-app photo                                  |
-| In-app gallery | Source of truth: photos stay in the app even without Photos library permission                                                      |
-| System album   | Copy into the “AIB Camera” album if Photos permission is granted (not guaranteed)                                                   |
-| Capture log    | Local append-only list: capture ID, date/time, coordinates; exportable as CSV with `install_id`                                     |
-| Install ID     | Stable UUID per install (Settings, tap to copy); matches the CSV column                                                             |
-| EXIF           | Best-effort write of identifier, GPS, and machine comment on the JPEG (not always available)                                        |
-| Offline        | Capture, stamp, gallery, log, and share do not require a network                                                                    |
+| Feature        | Detail                                                                                                                                         |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Stamp on JPEG  | Date/time (**Europe/Rome** timezone), coordinates, accuracy, altitude, heading, wind (when online), place, and custom text, per Stamp settings |
+| Aimed target   | Distance + compass heading from GPS: estimates coordinates of what you point at; Me ↔ Target toggle; “estimated” label on the stamp            |
+| Live preview   | The viewfinder shows the same block that will be burned into the photo                                                                         |
+| Fast capture   | You can take several photos in a row; the stamp is processed in a queue, one photo at a time                                                   |
+| Map tab        | Me/Aimed point on the map; same stamp info; copy, open in Maps, save map as a stamped in-app photo                                             |
+| In-app gallery | Source of truth: photos stay in the app even without Photos library permission                                                                 |
+| System album   | Copy into the “AIB Camera” album if Photos permission is granted (not guaranteed)                                                              |
+| Capture log    | Local append-only list: capture ID, date/time, coordinates; exportable as CSV with `install_id`                                                |
+| Install ID     | Stable UUID per install (Settings, tap to copy); matches the CSV column                                                                        |
+| EXIF           | Best-effort write of identifier, GPS, and machine comment on the JPEG (not always available)                                                   |
+| Offline        | Capture, stamp, gallery, log, and share do not require a network                                                                               |
 
 ### What it does not do
 
@@ -147,7 +147,7 @@ In **portrait**, the live preview has **black bands** above and below. Top: **fl
 
 The viewfinder shows the same block that will be **burned** into the JPEG:
 
-- top: date/time, optional **Aimed target (estimated)** line, coordinates, meta (estimated distance / accuracy / altitude / heading), place, per Stamp settings toggles;
+- top: date/time, optional **Aimed target (estimated)** line, coordinates, meta (estimated distance / accuracy / altitude / heading / wind), place, per Stamp settings toggles;
 - bottom: custom text, if filled in.
 
 Font, text size, and background opacity follow **Stamp settings** (top-right icon on the camera). The preview matches what will land on the photo (live and burned-in stamps scale from the short side of the frame). **Heading** stays aligned with what the camera is pointing at in landscape as well.
@@ -205,6 +205,7 @@ Path: sliders icon on the **camera**. full-width, full-height bottom sheet (**St
 - GPS accuracy
 - Altitude
 - Heading (compass)
+- Wind (current conditions from Open-Meteo; local cache; omitted offline)
 
 ### 8.2 Custom text
 
@@ -312,10 +313,10 @@ After stamping the app tries to write on the JPEG, among other fields:
 ## 13. Offline use and place
 
 - Capture, stamp, gallery, log, and share **do not require a network**.
-- Network is only needed for **reverse geocoding** (coordinates → place label), if Place is enabled and there is connectivity.
-- Recent labels stay in a **local cache** and can be reused offline nearby (about **2.5 km** radius).
+- Network is used for **reverse geocoding** (coordinates → place label) when Place is enabled and there is connectivity, and for **current wind** (Open-Meteo) on the effective stamp point when Wind is enabled.
+- Recent place labels and wind samples stay in a **local cache** and can be reused offline nearby (about **2–2.5 km** radius). Capture **never waits** on a wind request: it uses the cache or omits the field.
 
-Without network or GPS, the stamp shows fallback text (_Coordinates unavailable_, _Place unavailable_) without blocking the shutter.
+Without network or GPS, the stamp shows fallback text (_Coordinates unavailable_, _Place unavailable_) and omits wind, without blocking the shutter.
 
 On older or constrained devices, the app **degrades quietly**: if Skia stamp fails the unstamped JPEG stays in the gallery; without native EXIF, photo + gallery + log remain; without Photos permission only the in-app gallery remains; fonts and haptics use system fallbacks. The shutter must not block for these details.
 
@@ -338,7 +339,7 @@ Anyone using the app should keep these points in mind:
 3. **Date and time on the stamp** always use Europe/Rome; check that the phone clock is set correctly.
 4. **“AIB Camera” album** is a convenience copy: the reliable copy on the device is the **in-app gallery**.
 5. **Privacy:** photos, settings, and log stay on the device; there is no developer-managed cloud sync. Sharing with third parties is the user’s choice.
-6. **Updates:** this guide refers to app version **1.2.1**; for later releases check for differences on [smnl.dev/aib-camera](https://smnl.dev/aib-camera).
+6. **Updates:** this guide refers to app version **1.2.2**; for later releases check for differences on [smnl.dev/aib-camera](https://smnl.dev/aib-camera).
 
 ---
 
@@ -369,4 +370,4 @@ Anyone using the app should keep these points in mind:
 
 ---
 
-_Unofficial document · Reference app version 1.2.1 · Printable · © Stefano Monolo: smnl.dev_
+_Unofficial document · Reference app version 1.2.2 · Printable · © Stefano Monolo: smnl.dev_

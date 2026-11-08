@@ -7,7 +7,7 @@
     </tr>
     <tr>
       <td><strong>Versione app di riferimento</strong></td>
-      <td>1.2.1</td>
+      <td>1.2.2</td>
     </tr>
     <tr>
       <td><strong>Lingua</strong></td>
@@ -73,7 +73,7 @@
 <p>
   È pensata per <strong>chiunque</strong> usi l’app: cittadini, volontari o
   altri, per documentare un incendio boschivo (AIB) o una situazione simile.
-  Descrive il comportamento reale della versione <strong>1.2.1</strong>.
+  Descrive il comportamento reale della versione <strong>1.2.2</strong>.
 </p>
 <hr />
 <h2>2. Cos’è AIB Camera</h2>
@@ -134,8 +134,8 @@
       <td>Timbro sul JPEG</td>
       <td>
         Data/ora (fuso <strong>Europe/Rome</strong>), coordinate, precisione,
-        altitudine, direzione, luogo e testo personalizzato, secondo la
-        Configurazione del timbro
+        altitudine, direzione, vento (se online), luogo e testo personalizzato,
+        secondo la Configurazione del timbro
       </td>
     </tr>
     <tr>
@@ -351,8 +351,8 @@
 <ul>
   <li>
     in alto: data/ora, eventuale riga <strong>Punto mirato (stimato)</strong>,
-    coordinate, meta (distanza stimata / precisione / altitudine / direzione),
-    luogo, secondo gli interruttori in Configurazione;
+    coordinate, meta (distanza stimata / precisione / altitudine / direzione /
+    vento), luogo, secondo gli interruttori in Configurazione;
   </li>
   <li>in basso: testo personalizzato, se compilato.</li>
 </ul>
@@ -512,6 +512,9 @@
   <li>Precisione GPS</li>
   <li>Altitudine</li>
   <li>Direzione (bussola)</li>
+  <li>
+    Vento (condizioni attuali da Open-Meteo; cache locale; omesso offline)
+  </li>
 </ul>
 <h3>8.2 Testo personalizzato</h3>
 <p>
@@ -746,19 +749,24 @@
     <strong>non richiedono rete</strong>.
   </li>
   <li>
-    La rete serve solo per la <strong>geocodifica inversa</strong> (coordinate →
-    etichetta di luogo), se il campo Luogo è attivo e c’è connessione.
+    La rete serve per la <strong>geocodifica inversa</strong> (coordinate →
+    etichetta di luogo), se il campo Luogo è attivo e c’è connessione, e per il
+    <strong>vento attuale</strong> (Open-Meteo) sul punto effettivo del timbro
+    se Vento è attivo.
   </li>
   <li>
-    Le etichette recenti restano in <strong>cache locale</strong> e possono
-    essere riusate offline nelle vicinanze (raggio circa
-    <strong>2,5 km</strong>).
+    Etichette di luogo e campioni di vento recenti restano in
+    <strong>cache locale</strong> e possono essere riusati offline nelle
+    vicinanze (raggio circa <strong>2–2,5 km</strong>). Lo scatto
+    <strong>non attende</strong> la richiesta vento: usa la cache o omette il
+    campo.
   </li>
 </ul>
 <p>
   Senza rete o senza GPS, il timbro mostra i testi di fallback (<em
     >Coordinate non disponibili</em
-  >, <em>Luogo non disponibile</em>) senza bloccare lo scatto.
+  >, <em>Luogo non disponibile</em>) e omette il vento, senza bloccare lo
+  scatto.
 </p>
 <p>
   Su dispositivi più vecchi o con moduli nativi limitati, l’app
@@ -810,7 +818,7 @@
   </li>
   <li>
     <strong>Aggiornamenti:</strong> questa guida si riferisce alla versione app
-    <strong>1.2.1</strong>; in caso di release successive verificare eventuali
+    <strong>1.2.2</strong>; in caso di release successive verificare eventuali
     differenze su <a href="https://smnl.dev/aib-camera">smnl.dev/aib-camera</a>.
   </li>
 </ol>
@@ -896,7 +904,7 @@
 <hr />
 <p>
   <em
-    >Documento non ufficiale · Versione app di riferimento 1.2.1 · Stampabile ·
+    >Documento non ufficiale · Versione app di riferimento 1.2.2 · Stampabile ·
     © Stefano Monolo: smnl.dev</em
   >
 </p>

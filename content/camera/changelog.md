@@ -2,6 +2,15 @@
 
 # Novità: AIB Camera
 
+## 1.2.2 (8 novembre 2026)
+
+- **Vento attuale** sul timbro (Fotocamera e Mappa): velocità e direzione da Open-Meteo per il punto effettivo (Qui o Mirato).
+- Interruttore **Vento** in Configurazione del timbro; cache locale; omesso offline; lo scatto non attende la richiesta di rete.
+- Altitudine sul timbro senza suffisso «s.l.m.» (solo metri).
+- Luogo sul timbro: wrapping più largo (tipicamente al massimo **2 righe**).
+- Etichetta foglio Punta: **Distanza** (senza «(m)»; il suffisso `m` resta sul campo).
+- Punto mirato: rimosso il limite di **50 km** su distanza (digitazione e trascinamento mappa).
+
 ## 1.2.1 (7 novembre 2026)
 
 - **Mappa** unificata: Leaflet + OpenStreetMap HOT su **iOS e Android** (niente Apple Maps / Google Maps SDK; nessuna API key). Dark mode senza CARTO (i tile CARTO richiedono una chiave dal 2026).
