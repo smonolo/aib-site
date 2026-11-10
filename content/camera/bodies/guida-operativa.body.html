@@ -67,8 +67,8 @@
 <h2>1. Scopo della guida</h2>
 <p>
   Questa guida spiega, in italiano, come funziona AIB Camera sul campo:
-  permessi, scatto, timbro sulle foto, galleria, registro scatti e uso senza
-  rete.
+  permessi, scatto e video, timbro su foto e video, galleria, registro scatti e
+  uso senza rete.
 </p>
 <p>
   È pensata per <strong>chiunque</strong> usi l’app: cittadini, volontari o
@@ -85,12 +85,17 @@
   organizzazione né solo a operatori professionali. Consente di:
 </p>
 <ul>
-  <li>scattare foto con la fotocamera posteriore;</li>
   <li>
-    stampare sul JPEG (timbro visivo) data, ora, posizione e, se disponibili,
-    luogo e altri dati di contesto;
+    scattare foto e registrare video brevi (fino a 60 s) con la fotocamera
+    posteriore;
   </li>
-  <li>conservare le foto in una <strong>galleria interna all’app</strong>;</li>
+  <li>
+    stampare sul JPEG o sull’MP4 (timbro visivo) data, ora, posizione e, se
+    disponibili, luogo e altri dati di contesto;
+  </li>
+  <li>
+    conservare foto e video in una <strong>galleria interna all’app</strong>;
+  </li>
   <li>
     condividerle con il foglio di condivisione del sistema operativo (WhatsApp,
     Telegram, Mail, …);
@@ -131,11 +136,19 @@
   </thead>
   <tbody>
     <tr>
-      <td>Timbro sul JPEG</td>
+      <td>Timbro sul JPEG/MP4</td>
       <td>
         Data/ora (fuso <strong>Europe/Rome</strong>), coordinate, precisione,
         altitudine, direzione, vento (se online), luogo e testo personalizzato,
         secondo la Configurazione del timbro
+      </td>
+    </tr>
+    <tr>
+      <td>Foto / Video</td>
+      <td>
+        Pulsante modalità (in basso a destra) con menu Foto/Video; video fino a
+        <strong>60 s</strong>, microfono opzionale (senza microfono il clip è
+        muto); geo fissata all’avvio della registrazione
       </td>
     </tr>
     <tr>
@@ -147,13 +160,16 @@
     </tr>
     <tr>
       <td>Anteprima live</td>
-      <td>Sul mirino compare lo stesso blocco che verrà bruciato sulla foto</td>
+      <td>
+        Sul mirino compare lo stesso blocco che verrà bruciato sulla foto o sul
+        video
+      </td>
     </tr>
     <tr>
       <td>Scatto rapido</td>
       <td>
-        Si possono scattare più foto di seguito; il timbro viene elaborato in
-        coda, una foto alla volta
+        Si possono scattare più foto di seguito; il timbro (foto o video) viene
+        elaborato in coda
       </td>
     </tr>
     <tr>
@@ -166,7 +182,7 @@
     <tr>
       <td>Galleria in-app</td>
       <td>
-        Fonte di verità: le foto restano nell’app anche senza permesso alla
+        Fonte di verità: foto e video restano nell’app anche senza permesso alla
         libreria Foto
       </td>
     </tr>
@@ -236,8 +252,8 @@
   </li>
   <li>
     Orientamento: <strong>verticale e orizzontale</strong>. In orizzontale la
-    fotocamera sposta i controlli ai lati (flash/mira/timbro a sinistra;
-    scatto/zoom a destra).
+    fotocamera sposta i controlli ai lati (flash/mira/timbro a sinistra; scatto
+    / anteprima / zoom / modalità a destra).
   </li>
   <li>
     Lingua dell’interfaccia: <strong>italiano</strong> (predefinita) o
@@ -270,8 +286,15 @@
       <td><strong>Fotocamera</strong></td>
       <td>Sì</td>
       <td>
-        Scattare le foto. Senza questo permesso l’app non può acquisire
-        immagini.
+        Scattare foto e registrare video. Senza questo permesso l’app non può
+        acquisire.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Microfono</strong></td>
+      <td>No</td>
+      <td>
+        Audio nei video. Se negato, la registrazione continua senza suono.
       </td>
     </tr>
     <tr>
@@ -286,19 +309,22 @@
       <td><strong>Libreria Foto / Media</strong></td>
       <td>No</td>
       <td>
-        Copiare le foto nell’album di sistema «AIB Camera» e rimuoverle da lì
-        quando si eliminano dall’app.
+        Copiare foto e video nell’album di sistema «AIB Camera» e rimuoverli da
+        lì quando si eliminano dall’app.
       </td>
     </tr>
   </tbody>
 </table>
 <p>
-  <strong>Senza GPS</strong> è comunque possibile scattare. Sul timbro restano
-  data/ora e l’eventuale testo personalizzato; le righe geo mostrano
-  <em>Coordinate non disponibili</em> / <em>Luogo non disponibile</em>.
+  <strong>Senza GPS</strong> è comunque possibile scattare e registrare. Sul
+  timbro restano data/ora e l’eventuale testo personalizzato; le righe geo
+  mostrano <em>Coordinate non disponibili</em> / <em>Luogo non disponibile</em>.
 </p>
 <p>
-  <strong>Senza libreria Foto</strong> le immagini restano nella
+  <strong>Senza microfono</strong> i video restano utilizzabili, senza audio.
+</p>
+<p>
+  <strong>Senza libreria Foto</strong> le immagini e i video restano nella
   <strong>galleria dell’app</strong>, che è la fonte di verità.
 </p>
 <p>
@@ -336,11 +362,14 @@
 <p>
   In <strong>verticale</strong>, l’anteprima live ha
   <strong>bande nere</strong> sopra e sotto. In alto: <strong>flash</strong> a
-  sinistra, <strong>Punta</strong> accanto al flash,
-  <strong>configurazione timbro</strong> a destra. In basso: scatto al centro,
-  anteprima ultimo scatto a sinistra, <strong>zoom</strong> a destra. In
-  <strong>orizzontale</strong>, le bande sono ai lati: controlli secondari a
-  sinistra, scatto / anteprima / zoom a destra. Oltre 2× il pulsante tele mostra
+  sinistra; a destra <strong>Qui/Mirato</strong> (se attivo),
+  <strong>Punta</strong> e <strong>configurazione timbro</strong>. In basso:
+  scatto al centro, anteprima ultimo scatto a sinistra; a destra
+  <strong>zoom</strong> e <strong>modalità Foto/Video</strong> (icone
+  affiancate, ciascuna con menu). In <strong>orizzontale</strong>, le bande sono
+  ai lati: flash / Qui-Mirato / Punta / configurazione a sinistra; a destra
+  anteprima, scatto, poi <strong>zoom</strong> e
+  <strong>modalità</strong> impilati in verticale. Oltre 2× il menu zoom mostra
   il fattore live (3×, 4×, …).
 </p>
 <h3>7.2 Anteprima del timbro (live)</h3>
@@ -399,7 +428,8 @@
     <tr>
       <td><strong>Punta</strong></td>
       <td>
-        Icona mirino accanto al flash, oppure <strong>tieni premuto</strong> il
+        Icona mirino in alto a destra (accanto alla configurazione; rail
+        sinistro in orizzontale), oppure <strong>tieni premuto</strong> il
         mirino (~0,5 s): foglio a tutta larghezza alto quanto il contenuto;
         chiusura con ✕ o tocco fuori; distanza e <strong>Blocca punto</strong>.
       </td>
@@ -407,8 +437,9 @@
     <tr>
       <td><strong>Qui / Mirato</strong></td>
       <td>
-        Con un punto sticky attivo, selettore in alto al centro: alterna tra la
-        tua posizione GPS e il punto mirato senza perderlo.
+        Con un punto sticky attivo, selettore in alto a destra (accanto alla
+        configurazione; nel rail sinistro in orizzontale): alterna tra GPS e
+        punto mirato senza perderlo.
       </td>
     </tr>
     <tr>
@@ -422,9 +453,16 @@
     <tr>
       <td><strong>Zoom</strong></td>
       <td>
-        Pulsanti vicino allo scatto (es. 0,5× / 1× / 2× se disponibili) e gesto
-        a <strong>due dita</strong>; oltre 2× il pulsante attivo mostra 3×, 4×,
-        …. <strong>Doppio tocco</strong> sul mirino riporta lo zoom a 1×.
+        Icona lente a destra dello scatto (accanto alla modalità): apre un menu
+        0,5× / 1× / 2× se disponibili; anche gesto a <strong>due dita</strong>.
+        <strong>Doppio tocco</strong> sul mirino riporta lo zoom a 1×.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Modalità Foto / Video</strong></td>
+      <td>
+        Icona fotocamera o videocamera a destra dello scatto (accanto allo
+        zoom): apre un menu per scegliere Foto o Video.
       </td>
     </tr>
     <tr>
@@ -607,10 +645,10 @@
     secondo la Configurazione);
   </li>
   <li>
-    <strong>Copia</strong> il testo negli appunti;
-    <strong>Apri nelle mappe</strong> apre Apple Maps / Google Maps;
-    <strong>Salva come foto</strong> cattura la mappa (con i pin) e la salva in
-    Foto dell’app con lo stesso timbro delle scatti dalla fotocamera.
+    <strong>Copia</strong> il testo negli appunti; <strong>Mappe</strong> apre
+    Apple Maps / Google Maps; <strong>Salva come foto</strong> cattura la mappa
+    (con i pin) e la salva in Foto dell’app con lo stesso timbro delle scatti
+    dalla fotocamera.
   </li>
 </ul>
 <p>
@@ -625,7 +663,8 @@
 <ul>
   <li>
     Le foto sono raggruppate per giorno (fuso Europe/Rome), con intestazioni
-    tipo <em>Oggi</em> / <em>Ieri</em>.
+    tipo <em>Oggi</em> / <em>Ieri</em>. Giorno più recente in alto; dentro ogni
+    giorno, dal più recente al più vecchio (ultimo scatto per primo).
   </li>
   <li>
     Griglia di miniature quadrate: <strong>3 colonne</strong> in verticale,

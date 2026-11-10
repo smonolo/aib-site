@@ -2,6 +2,22 @@
 
 # Novità: AIB Camera
 
+## 1.3.1 (10 novembre 2026)
+
+- **Android / zoom:** i chip 1× / 2× / 4× usano il mapping lineare di expo-camera (`zoom` 0–1 × rapporto massimo assunto ~8×), così 2× e 4× non risultano più quasi identici a 1× / 2× su dispositivi tipici.
+- **iOS / zoom:** mapping allineato alla curva esponenziale di expo-camera; logica zoom estratta in `useCameraZoom`.
+- **Mappa:** implementazione Leaflet/WebView semplificata; tile HOT con buffer più ampio, caricamento a fine zoom e retry; meno inject GPS durante il pan.
+- Pulsante mappa **Mappe** (prima «Apri nelle mappe»).
+- Tab bar a vetro scuro semitrasparente (blur + wash scuro, icone chiare); su Android sotto API 31 solo wash opaco (niente blur nativo instabile).
+- Galleria Foto: dentro ogni giorno gli scatti sono dal più recente al più vecchio (ultimo scatto in alto a sinistra); «Salva come foto» sulla mappa usa l’ora del salvataggio, non un tick GPS vecchio.
+
+## 1.3.0 (8 novembre 2026)
+
+- **Video** in Fotocamera: commutatore Foto / Video, registrazione fino a **60 s** con microfono opzionale (senza microfono il video è muto).
+- Timbro bruciato sull’MP4 (stesso layout delle foto) dopo lo stop; se l’overlay fallisce resta il video senza timbro (serve rebuild nativa con Nitro / video-pipeline).
+- Galleria e visualizzatore: poster JPEG (fotogramma o placeholder) + badge Video, riproduzione in-app, condivisione/eliminazione MP4 come per le foto.
+- Permessi: microfono e video nella libreria Foto; rebuild nativa richiesta.
+
 ## 1.2.2 (8 novembre 2026)
 
 - **Vento attuale** sul timbro (Fotocamera e Mappa): velocità e direzione da Open-Meteo per il punto effettivo (Qui o Mirato).

@@ -131,29 +131,29 @@ const it: AibCopy = {
   home: {
     title: 'AIB Camera',
     description:
-      'Fotocamera di campo indipendente per chiunque: foto geolocalizzate di incendi boschivi (AIB) con timbro data/ora/GPS/luogo, ID EXIF e registro scatti sul dispositivo. Aperta al pubblico, offline, senza account.',
-    lead: 'Fotografia di campo per chiunque: anteprima e timbro di data, ora, GPS e luogo su ogni scatto, con ID EXIF per i controlli successivi.',
+      'Fotocamera di campo indipendente per chiunque: foto e video geolocalizzati di incendi boschivi (AIB) con timbro data/ora/GPS/luogo, ID EXIF e registro scatti sul dispositivo. Aperta al pubblico, offline, senza account.',
+    lead: 'Fotografia di campo per chiunque: anteprima e timbro di data, ora, GPS e luogo su ogni foto o video, con ID locale per i controlli successivi.',
     intro1:
-      'AIB Camera è una piccola app mobile per scattare foto geolocalizzate timbrate in contesto di antincendio boschivo (AIB) o situazioni simili: quando serve documentare un incendio, condividere lo scatto (WhatsApp, Telegram, Mail, …) oppure leggere coordinate e altri dettagli a chi risponde all’emergenza (ad es. 112), anche senza rete affidabile.',
+      'AIB Camera è una piccola app mobile per scattare foto e video brevi geolocalizzati timbrati in contesto di antincendio boschivo (AIB) o situazioni simili: quando serve documentare un incendio, condividere lo scatto (WhatsApp, Telegram, Mail, …) oppure leggere coordinate e altri dettagli a chi risponde all’emergenza (ad es. 112), anche senza rete affidabile.',
     intro2Html:
       'Aperta a chiunque: cittadini, volontari o operatori. Offline-first, senza account; creata da un volontario e disponibile al pubblico.',
     featuresLabel: 'Cosa fa',
     features: [
       {
         title: 'Mirino 4:3 e timbro live',
-        body: 'Mirino con bande nere in verticale e orizzontale: in verticale flash, punta e timbro in alto, zoom e scatto in basso; in orizzontale i controlli passano ai lati. Sul mirino compare lo stesso timbro che verrà bruciato sulla foto.',
+        body: 'Mirino con bande nere in verticale e orizzontale: in verticale flash, punta e timbro in alto, zoom e scatto in basso; commutatore Foto / Video; in orizzontale i controlli passano ai lati. Sul mirino compare lo stesso timbro che verrà bruciato sulla foto o sul video.',
       },
       {
         title: 'Punto mirato',
         body: 'Stesso foglio Punta da Fotocamera (mirino o pressione lunga) o Mappa (icona in alto). Indica la distanza (preset 1 / 2 / 5 / 10 km o metri liberi con suffisso m) e blocca le coordinate stimate da GPS + bussola. Alterna Qui ↔ Mirato; sulla mappa puoi trascinare il pin rosso per aggiornare punto e metri. Sul timbro compare «Punto mirato (stimato)».',
       },
       {
-        title: 'Timbro sul JPEG',
-        body: 'Data, ora (Europe/Rome), coordinate (formato N/E, decimali o GMS), altitudine, direzione, vento (se online), luogo e testo personalizzato opzionale stampati sulla foto.',
+        title: 'Timbro su JPEG e video',
+        body: 'Data, ora (Europe/Rome), coordinate (formato N/E, decimali o GMS), altitudine, direzione, vento (se online), luogo e testo personalizzato opzionale stampati sulla foto o, dopo lo stop, sul video (fino a 60 s; microfono opzionale).',
       },
       {
-        title: 'Scatto rapido',
-        body: 'Puoi scattare in sequenza senza aspettare l’elaborazione del timbro. Per la posizione si usa il fix live (o il punto mirato bloccato) quando disponibile, così lo scatto resta snello.',
+        title: 'Scatto e registrazione rapidi',
+        body: 'Puoi scattare in sequenza senza aspettare l’elaborazione del timbro; i video si elaborano dopo lo stop. Per la posizione si usa il fix live (o il punto mirato bloccato) quando disponibile.',
       },
       {
         title: 'EXIF per le macchine',
@@ -165,34 +165,34 @@ const it: AibCopy = {
       },
       {
         title: 'Galleria in-app',
-        body: 'Le foto restano nell’app come fonte di verità. Dal visualizzatore scorri (swipe o filmstrip), condividi o elimina. Album Foto «AIB Camera» opzionale; eliminando dall’app si rimuove anche quella copia quando possibile.',
+        body: 'Foto e video restano nell’app come fonte di verità. Dal visualizzatore scorri (swipe o filmstrip), riproduci i video, condividi o elimina. Album Foto «AIB Camera» opzionale; eliminando dall’app si rimuove anche quella copia quando possibile.',
       },
       {
         title: 'Registro scatti',
-        body: 'Ogni scatto ha un ID locale, data e coordinate. Da Impostazioni vedi versione e ID installazione (tocca per copiare) ed esporti il registro in CSV con install_id: anche dopo aver eliminato la foto dalla galleria.',
+        body: 'Ogni scatto ha un ID locale, data e coordinate. Da Impostazioni vedi versione e ID installazione (tocca per copiare) ed esporti il registro in CSV con install_id: anche dopo aver eliminato foto o video dalla galleria.',
       },
       {
         title: 'Funziona offline',
-        body: 'Scatto, timbro, galleria, registro scatti e condivisione senza rete. GPS, etichette di luogo e vento (Open-Meteo) sono opzionali e in cache. Su dispositivi limitati (niente EXIF, album Foto, font o vibrazione) l’app continua comunque a scattare e salvare.',
+        body: 'Scatto, video, timbro, galleria, registro scatti e condivisione senza rete. GPS, etichette di luogo e vento (Open-Meteo) sono opzionali e in cache. Su dispositivi limitati (niente EXIF, overlay video, album Foto, font o vibrazione) l’app continua comunque a salvare.',
       },
       {
         title: 'Tutto sul dispositivo',
-        body: 'Nessun account, nessun SDK di analytics, nessuna sincronizzazione cloud. Foto, impostazioni e registro restano sul dispositivo.',
+        body: 'Nessun account, nessun SDK di analytics, nessuna sincronizzazione cloud. Foto, video, impostazioni e registro restano sul dispositivo.',
       },
       {
         title: 'Pronto per l’emergenza',
-        body: 'La fotocamera è obbligatoria; la posizione no. Lo scatto resta utilizzabile anche senza fix GPS.',
+        body: 'La fotocamera è obbligatoria; posizione e microfono no. Scatto e video restano utilizzabili anche senza fix GPS o audio.',
       },
     ],
     guideTitle: 'Guida operativa',
     guideBodyHtml:
-      'Guida per l’uso sul campo: permessi, fotocamera, timbro, galleria, registro scatti, limiti e checklist. Leggibile sul web e stampabile in PDF.',
+      'Guida per l’uso sul campo: permessi, fotocamera, video, timbro, galleria, registro scatti, limiti e checklist. Leggibile sul web e stampabile in PDF.',
     guideLink: 'Apri la guida',
     guideOr: 'oppure scarica',
     guidePdf: 'guida-operativa.pdf',
     privacyTitle: 'Privacy e termini',
     privacyBodyHtml:
-      'Foto, impostazioni, registro scatti e posizione restano sul dispositivo. Leggi l’ <a data-aib="privacy">informativa privacy</a> e i <a data-aib="terms">termini di utilizzo</a>.',
+      'Foto, video, impostazioni, registro scatti e posizione restano sul dispositivo. Leggi l’ <a data-aib="privacy">informativa privacy</a> e i <a data-aib="terms">termini di utilizzo</a>.',
     contactsTitle: 'Contatti',
     contactsBodyHtml:
       'Domande sull’app: <a href="mailto:stefano@smnl.dev">stefano@smnl.dev</a>.',
@@ -203,7 +203,7 @@ const it: AibCopy = {
       'Guida operativa in italiano di AIB Camera: permessi, fotocamera, timbro, galleria, registro scatti, limiti e checklist sul campo. Leggibile nel browser e scaricabile in PDF.',
     heading: 'Guida operativa',
     leadHtml:
-      'Come funziona AIB Camera sul campo: permessi, scatto, timbro, galleria e registro scatti. Versione di riferimento <strong>1.2.2</strong>.',
+      'Come funziona AIB Camera sul campo: permessi, scatto, video, timbro, galleria e registro scatti. Versione di riferimento <strong>1.3.0</strong>.',
     downloadPdf: 'Scarica PDF',
     openPdf: 'Apri PDF',
     pdfHref: '/docs/aib-camera-guida-operativa.pdf',
@@ -215,7 +215,7 @@ const it: AibCopy = {
       'Registro delle versioni di AIB Camera: cosa è cambiato in ogni rilascio, dalla 1.0.0 alla versione corrente.',
     heading: 'Novità',
     leadHtml:
-      'Cosa è cambiato in ogni versione rilasciata. Versione corrente <strong>1.2.2</strong>.',
+      'Cosa è cambiato in ogni versione rilasciata. Versione corrente <strong>1.3.0</strong>.',
   },
   privacy: {
     title: 'Informativa privacy: AIB Camera',
@@ -224,16 +224,17 @@ const it: AibCopy = {
     heading: 'Informativa privacy: AIB Camera',
     updated: 'Ultimo aggiornamento: 8 novembre 2026',
     intro1Html:
-      'AIB Camera è un’app mobile per la fotografia di campo nell’antincendio boschivo (AIB) e situazioni simili. È aperta a chiunque: utile per scattare foto geolocalizzate timbrate, condividerle (WhatsApp, Telegram, …) o leggere coordinate a chi risponde all’emergenza (ad es. 112).',
+      'AIB Camera è un’app mobile per la fotografia di campo nell’antincendio boschivo (AIB) e situazioni simili. È aperta a chiunque: utile per scattare foto e video brevi geolocalizzati timbrati, condividerli (WhatsApp, Telegram, …) o leggere coordinate a chi risponde all’emergenza (ad es. 112).',
     intro2:
       'Questa informativa descrive come l’app tratta i dati sul dispositivo.',
     summaryTitle: 'In sintesi',
     summary: [
-      'L’app è <strong>offline-first</strong>. Foto, impostazioni, galleria in-app e registro scatti restano sul dispositivo.',
+      'L’app è <strong>offline-first</strong>. Foto, video, impostazioni, galleria in-app e registro scatti restano sul dispositivo.',
       'Non c’è <strong>account</strong>, <strong>SDK di analytics</strong> né <strong>sincronizzazione cloud</strong> gestita dallo sviluppatore.',
-      'La <strong>fotocamera</strong> è necessaria per scattare.',
-      'La <strong>posizione</strong> è opzionale e serve a stampare coordinate, altitudine, direzione, vento (se disponibile) e luogo sulla foto, a mostrarli nella scheda <strong>Mappa</strong>, e a scrivere i campi GPS corrispondenti nell’EXIF JPEG quando possibile. Puoi anche bloccare un <strong>punto mirato</strong> (GPS + bussola + distanza inserita): le coordinate stimate possono sostituire la tua posizione sul timbro e sulla mappa finché non le cancelli.',
-      'L’accesso alla <strong>libreria Foto</strong> è opzionale (chiesto subito dopo la fotocamera, come la posizione) e serve a salvare le foto timbrate nell’album «AIB Camera» e a rimuovere quelle copie quando elimini le foto dall’app.',
+      'La <strong>fotocamera</strong> è necessaria per foto e video.',
+      'Il <strong>microfono</strong> è opzionale e serve solo all’audio dei video; se negato i video restano muti.',
+      'La <strong>posizione</strong> è opzionale e serve a stampare coordinate, altitudine, direzione, vento (se disponibile) e luogo su foto o video, a mostrarli nella scheda <strong>Mappa</strong>, e a scrivere i campi GPS corrispondenti nell’EXIF JPEG o nei metadati video quando possibile. Puoi anche bloccare un <strong>punto mirato</strong> (GPS + bussola + distanza inserita): le coordinate stimate possono sostituire la tua posizione sul timbro e sulla mappa finché non le cancelli.',
+      'L’accesso alla <strong>libreria Foto</strong> è opzionale (chiesto subito dopo la fotocamera, come la posizione) e serve a salvare foto e video timbrati nell’album «AIB Camera» e a rimuovere quelle copie quando elimini gli elementi dall’app.',
       'La rete serve per la <strong>geocodifica inversa opzionale</strong> (da GPS a etichetta di luogo), per il <strong>vento attuale opzionale</strong> sul punto del timbro (Open-Meteo: velocità e direzione; in cache sul dispositivo; omesso offline; lo scatto non attende la richiesta) e per i <strong>tile della mappa</strong> (OpenStreetMap HOT via Leaflet su iOS e Android, senza Google Maps) quando apri la scheda Mappa. Etichette di luogo e campioni di vento vicini possono restare in cache per riuso offline. Copiare le coordinate o aprire un link mappe non richiede i tile. Salvare la mappa come foto cattura la vista sullo schermo e applica il timbro sul dispositivo.',
     ],
     dataTitle: 'Dati trattati dall’app',
@@ -242,19 +243,26 @@ const it: AibCopy = {
     colWhy: 'Perché',
     dataRows: [
       {
-        data: 'Immagine dalla fotocamera',
+        data: 'Immagine / video dalla fotocamera',
         where: 'Sul dispositivo (archivio app; opzionalmente Libreria Foto)',
-        why: 'Scattare e condividere foto di campo timbrate',
+        why: 'Scattare e condividere foto e video di campo timbrati',
+      },
+      {
+        data: 'Audio microfono (solo video)',
+        where: 'Sul dispositivo dentro l’MP4 se il microfono è consentito',
+        why: 'Suono opzionale con i video di campo',
       },
       {
         data: 'Data e ora',
-        where: 'Stampate sul JPEG (Europe/Rome); anche EXIF DateTime',
-        why: 'Contesto operativo sulla foto',
+        where:
+          'Stampate sul JPEG/MP4 (Europe/Rome); anche EXIF DateTime sulle foto',
+        why: 'Contesto operativo sullo scatto',
       },
       {
         data: 'Coordinate GPS, precisione, altitudine, direzione',
-        where: 'Sul dispositivo; sul timbro / EXIF se disponibili',
-        why: 'Contesto di posizione sulla foto',
+        where:
+          'Sul dispositivo; sul timbro / EXIF o metadati video se disponibili',
+        why: 'Contesto di posizione sullo scatto',
       },
       {
         data: 'Stima punto mirato (distanza + direzione)',
@@ -307,20 +315,21 @@ const it: AibCopy = {
     logTitle: 'Registro scatti',
     logBodyHtml:
       'Ogni scatto riuscito viene registrato in un <strong>registro scatti</strong> locale (ID, data/ora e coordinate se disponibili). Il registro resta sul dispositivo anche se elimini la foto dalla galleria in-app o dall’album di sistema. Non viene caricato online. Puoi aprirlo da Impostazioni, copiare un ID per confrontarlo con l’EXIF di un JPEG condiviso, oppure esportare tutto in CSV tramite il foglio di condivisione di sistema. Ogni installazione dell’app ha anche un <strong>ID installazione</strong> (UUID) locale, visibile in Impostazioni. Lì puoi toccare <strong>Versione</strong> o <strong>ID installazione</strong> per copiare il valore. L’ID installazione è scritto nella colonna <code data-aib="code">install_id</code> dei CSV, così i registri di più dispositivi restano distinguibili. Reinstallare l’app genera un nuovo ID. La stringa di versione è solo l’etichetta di build dell’app (non un identificativo di tracciamento).',
-    exifTitle: 'Metadati EXIF',
+    exifTitle: 'Metadati EXIF e video',
     exifBodyHtml:
-      'Dopo il timbro visivo l’app prova a scrivere tag EXIF standard sul JPEG salvato (ad esempio <code data-aib="code">Software</code>, <code data-aib="code">Artist</code>, <code data-aib="code">ImageUniqueID</code>, campi GPS e un <code data-aib="code">UserComment</code> JSON). Se la build del dispositivo non può scrivere EXIF, la foto resta salvata con il timbro visivo e la voce nel registro scatti. Se anche il compositing del timbro fallisce, resta comunque il JPEG non timbrato nella galleria in-app.',
+      'Dopo il timbro visivo sulle foto l’app prova a scrivere tag EXIF standard sul JPEG salvato (ad esempio <code data-aib="code">Software</code>, <code data-aib="code">Artist</code>, <code data-aib="code">ImageUniqueID</code>, campi GPS e un <code data-aib="code">UserComment</code> JSON). Se la build del dispositivo non può scrivere EXIF, la foto resta salvata con il timbro visivo e la voce nel registro scatti. Se anche il compositing del timbro fallisce, resta comunque il JPEG non timbrato nella galleria in-app. Per i video (fino a 60 s) il timbro viene bruciato sull’MP4 dopo lo stop e possono essere scritti metadati limitati del contenitore; se l’overlay fallisce resta il video non timbrato. I video non usano EXIF JPEG.',
     noBackendHtml:
-      'Lo sviluppatore <strong>non</strong> gestisce un backend che riceve foto, posizione, impostazioni, ID di scatto o ID installazione.',
+      'Lo sviluppatore <strong>non</strong> gestisce un backend che riceve foto, video, posizione, impostazioni, ID di scatto o ID installazione.',
     permissionsTitle: 'Permessi',
     permissions: [
-      '<strong>Fotocamera</strong>: necessaria per scattare.',
-      '<strong>Posizione (in uso)</strong>: opzionale. Se negata puoi comunque scattare; le righe geo sul timbro risultano non disponibili e i campi GPS EXIF sono omessi.',
-      '<strong>Libreria Foto / media</strong>: opzionale (richiesta subito dopo la fotocamera, come la posizione): salvare le foto timbrate nell’album «AIB Camera» e rimuovere quelle copie quando le elimini dall’app. La galleria in-app resta la fonte di verità anche se questo permesso è negato.',
+      '<strong>Fotocamera</strong>: necessaria per foto e video.',
+      '<strong>Microfono</strong>: opzionale. Solo per l’audio dei video; se negato la registrazione continua senza suono.',
+      '<strong>Posizione (in uso)</strong>: opzionale. Se negata puoi comunque scattare; le righe geo sul timbro risultano non disponibili e i campi GPS EXIF/metadati sono omessi.',
+      '<strong>Libreria Foto / media</strong>: opzionale (richiesta subito dopo la fotocamera, come la posizione): salvare foto e video timbrati nell’album «AIB Camera» e rimuovere quelle copie quando li elimini dall’app. La galleria in-app resta la fonte di verità anche se questo permesso è negato.',
     ],
     shareTitle: 'Condivisione',
     shareBody:
-      'Se usi il foglio di condivisione di sistema (WhatsApp, Mail, File, ecc.), la foto condivisa (compreso l’eventuale EXIF scritto nel file), un CSV del registro scatti o il testo/posizione dalla scheda Mappa lascia l’app secondo le regole dell’app o del servizio che scegli. Aprire un punto in Apple Maps o Google Maps segue le regole di quell’app. Ciò è fuori dal controllo di AIB Camera.',
+      'Se usi il foglio di condivisione di sistema (WhatsApp, Mail, File, ecc.), la foto o il video condiviso (compresi eventuali EXIF o metadati scritti nel file), un CSV del registro scatti o il testo/posizione dalla scheda Mappa lascia l’app secondo le regole dell’app o del servizio che scegli. Aprire un punto in Apple Maps o Google Maps segue le regole di quell’app. Ciò è fuori dal controllo di AIB Camera.',
     minorsTitle: 'Privacy dei minori',
     minorsBody:
       'L’app non è rivolta ai minori e non raccoglie consapevolmente dati personali di minori.',
@@ -401,33 +410,33 @@ const en: AibCopy = {
   home: {
     title: 'AIB Camera',
     description:
-      'Independent field camera for anyone: geotagged wildfire (AIB) photos with date/time/GPS/place stamp, EXIF ID and on-device capture log. Public, offline, no account.',
-    lead: 'Field photography for anyone: live preview and a date, time, GPS and place stamp on every shot, with an EXIF ID for later checks.',
+      'Independent field camera for anyone: geotagged wildfire (AIB) photos and videos with date/time/GPS/place stamp, capture ID and on-device capture log. Public, offline, no account.',
+    lead: 'Field photography for anyone: live preview and a date, time, GPS and place stamp on every photo or video, with a local ID for later checks.',
     intro1:
-      'AIB Camera is a small mobile app for stamped, geotagged photos in wildfire (AIB) and similar situations: when you need to document a fire, share the shot (WhatsApp, Telegram, Mail, …), or read coordinates and other details to emergency responders (e.g. 112), even without a reliable network.',
+      'AIB Camera is a small mobile app for stamped, geotagged photos and short videos in wildfire (AIB) and similar situations: when you need to document a fire, share the shot (WhatsApp, Telegram, Mail, …), or read coordinates and other details to emergency responders (e.g. 112), even without a reliable network.',
     intro2Html:
       'Open to anyone: citizens, volunteers, or operators. Offline-first, no account; made by a volunteer and available to the public.',
     featuresLabel: 'What it does',
     features: [
       {
         title: '4:3 viewfinder and live stamp',
-        body: 'Viewfinder with black letterbox bands in portrait and landscape: portrait keeps flash, aim, and stamp settings on top with zoom and shutter below; landscape moves controls to the side rails. The viewfinder shows the same stamp that will be burned into the photo.',
+        body: 'Viewfinder with black letterbox bands in portrait and landscape: portrait keeps flash, aim, and stamp settings on top with zoom and shutter below; Photo / Video toggle; landscape moves controls to the side rails. The viewfinder shows the same stamp that will be burned into the photo or video.',
       },
       {
         title: 'Aimed target',
         body: 'Same Aim sheet from Camera (chrome or press-and-hold) or Map (header icon). Enter a distance (presets 1 / 2 / 5 / 10 km or custom meters with an m suffix) and lock estimated coordinates from GPS + compass. Toggle Me ↔ Target; on the map you can drag the red pin to update the point and meters. Stamp shows “Aimed target (estimated)”.',
       },
       {
-        title: 'Stamp on the JPEG',
-        body: 'Date, time (Europe/Rome), coordinates (N/E, decimal, or DMS format), altitude, heading, wind (when online), place, and optional custom text printed on the photo.',
+        title: 'Stamp on JPEG and video',
+        body: 'Date, time (Europe/Rome), coordinates (N/E, decimal, or DMS format), altitude, heading, wind (when online), place, and optional custom text printed on the photo or, after stop, on the video (up to 60 s; optional microphone).',
       },
       {
-        title: 'Fast shutter',
-        body: 'Shoot in sequence without waiting for stamp processing. Position uses the live fix (or locked aimed target) when available, so the shutter stays snappy.',
+        title: 'Fast shutter and recording',
+        body: 'Shoot in sequence without waiting for stamp processing; videos stamp after stop. Position uses the live fix (or locked aimed target) when available.',
       },
       {
         title: 'EXIF for machines',
-        body: 'After stamping, the app writes Software, ImageUniqueID (UUID), GPS tags, and a JSON UserComment when the native build supports it.',
+        body: 'After stamping photos, the app writes Software, ImageUniqueID (UUID), GPS tags, and a JSON UserComment when the native build supports it.',
       },
       {
         title: 'Map tab',
@@ -435,34 +444,34 @@ const en: AibCopy = {
       },
       {
         title: 'In-app gallery',
-        body: 'Photos stay in the app as the source of truth. The viewer lets you swipe or use the filmstrip, then share or delete. Optional Photos album “AIB Camera”; deleting in-app also removes that copy when possible.',
+        body: 'Photos and videos stay in the app as the source of truth. The viewer lets you swipe or use the filmstrip, play videos, then share or delete. Optional Photos album “AIB Camera”; deleting in-app also removes that copy when possible.',
       },
       {
         title: 'Capture log',
-        body: 'Each shot gets a local ID, date, and coordinates. In Settings you see version and install ID (tap to copy) and export the log as CSV with install_id: even after deleting the photo from the gallery.',
+        body: 'Each shot gets a local ID, date, and coordinates. In Settings you see version and install ID (tap to copy) and export the log as CSV with install_id: even after deleting photos or videos from the gallery.',
       },
       {
         title: 'Works offline',
-        body: 'Capture, stamp, gallery, capture log, and share without a network. GPS, place labels, and wind (Open-Meteo) are optional and cached. On constrained devices (no EXIF, Photos album, fonts, or haptics) the app still captures and saves.',
+        body: 'Capture, video, stamp, gallery, capture log, and share without a network. GPS, place labels, and wind (Open-Meteo) are optional and cached. On constrained devices (no EXIF, video overlay, Photos album, fonts, or haptics) the app still saves.',
       },
       {
         title: 'All on-device',
-        body: 'No account, no analytics SDK, no cloud sync. Photos, settings, and the log stay on the device.',
+        body: 'No account, no analytics SDK, no cloud sync. Photos, videos, settings, and the log stay on the device.',
       },
       {
         title: 'Emergency-ready',
-        body: 'Camera is required; location is not. You can still shoot without a GPS fix.',
+        body: 'Camera is required; location and microphone are not. You can still shoot and record without a GPS fix or audio.',
       },
     ],
     guideTitle: 'Field guide',
     guideBodyHtml:
-      'Field guide covering permissions, camera, stamp, gallery, capture log, limits, and checklist. Readable on the web and printable as PDF.',
+      'Field guide covering permissions, camera, video, stamp, gallery, capture log, limits, and checklist. Readable on the web and printable as PDF.',
     guideLink: 'Open the guide',
     guideOr: 'or download',
     guidePdf: 'field-guide.pdf',
     privacyTitle: 'Privacy and terms',
     privacyBodyHtml:
-      'Photos, settings, capture log, and location stay on the device. Read the <a data-aib="privacy">privacy policy</a> and the <a data-aib="terms">terms of use</a>.',
+      'Photos, videos, settings, capture log, and location stay on the device. Read the <a data-aib="privacy">privacy policy</a> and the <a data-aib="terms">terms of use</a>.',
     contactsTitle: 'Contact',
     contactsBodyHtml:
       'Questions about the app: <a href="mailto:stefano@smnl.dev">stefano@smnl.dev</a>.',
@@ -473,7 +482,7 @@ const en: AibCopy = {
       'AIB Camera field guide in English: permissions, camera, stamp, gallery, capture log, limits, and field checklist. Readable in the browser and downloadable as PDF.',
     heading: 'Field guide',
     leadHtml:
-      'How AIB Camera works in the field: permissions, capture, stamp, gallery, and capture log. Reference version <strong>1.2.2</strong>.',
+      'How AIB Camera works in the field: permissions, capture, video, stamp, gallery, and capture log. Reference version <strong>1.3.0</strong>.',
     downloadPdf: 'Download PDF',
     openPdf: 'Open PDF',
     pdfHref: '/docs/aib-camera-field-guide.pdf',
@@ -485,7 +494,7 @@ const en: AibCopy = {
       'AIB Camera release notes: what changed in each version, from 1.0.0 to the current release.',
     heading: 'Changelog',
     leadHtml:
-      'What changed in each released version. Current version <strong>1.2.2</strong>.',
+      'What changed in each released version. Current version <strong>1.3.0</strong>.',
   },
   privacy: {
     title: 'Privacy policy: AIB Camera',
@@ -494,15 +503,16 @@ const en: AibCopy = {
     heading: 'Privacy policy: AIB Camera',
     updated: 'Last updated: 8 November 2026',
     intro1Html:
-      'AIB Camera is a mobile app for field photography in wildfire response (AIB) and similar situations. It is open to anyone: useful for stamped, geotagged photos, sharing them (WhatsApp, Telegram, …), or reading coordinates to emergency responders (e.g. 112).',
+      'AIB Camera is a mobile app for field photography in wildfire response (AIB) and similar situations. It is open to anyone: useful for stamped, geotagged photos and short videos, sharing them (WhatsApp, Telegram, …), or reading coordinates to emergency responders (e.g. 112).',
     intro2: 'This policy describes how the app handles data on the device.',
     summaryTitle: 'In short',
     summary: [
-      'The app is <strong>offline-first</strong>. Photos, settings, in-app gallery, and capture log stay on the device.',
+      'The app is <strong>offline-first</strong>. Photos, videos, settings, in-app gallery, and capture log stay on the device.',
       'There is no <strong>account</strong>, <strong>analytics SDK</strong>, or developer-managed <strong>cloud sync</strong>.',
-      'The <strong>camera</strong> is required to take photos.',
-      '<strong>Location</strong> is optional and is used to print coordinates, altitude, heading, wind (when available), and place on the photo, show them on the <strong>Map</strong> tab, and write matching GPS EXIF JPEG fields when possible. You can also lock an <strong>aimed target</strong> (GPS + compass + entered distance): estimated coordinates can replace your position on the stamp and map until you clear them.',
-      '<strong>Photos library</strong> access is optional (requested early after Camera, like Location) and is used to save stamped photos into the “AIB Camera” album and remove those copies when you delete photos in the app.',
+      'The <strong>camera</strong> is required for photos and videos.',
+      'The <strong>microphone</strong> is optional and used only for video sound; if denied, videos are silent.',
+      '<strong>Location</strong> is optional and is used to print coordinates, altitude, heading, wind (when available), and place on photos or videos, show them on the <strong>Map</strong> tab, and write matching GPS EXIF JPEG or video metadata fields when possible. You can also lock an <strong>aimed target</strong> (GPS + compass + entered distance): estimated coordinates can replace your position on the stamp and map until you clear them.',
+      '<strong>Photos library</strong> access is optional (requested early after Camera, like Location) and is used to save stamped photos and videos into the “AIB Camera” album and remove those copies when you delete items in the app.',
       'Network is used for optional <strong>reverse geocoding</strong> (GPS → place label), optional <strong>current wind</strong> for the stamp point (Open-Meteo: speed and direction; cached on device; omitted offline; capture never waits on the request), and for <strong>map tiles</strong> (OpenStreetMap HOT via Leaflet on iOS and Android: not Google Maps) when you open the Map tab. Nearby place labels and wind samples may stay cached for offline reuse. Copying coordinates or opening a maps link does not require map tiles. Saving the map as a photo captures the on-screen view and stamps it on device.',
     ],
     dataTitle: 'Data processed by the app',
@@ -511,19 +521,25 @@ const en: AibCopy = {
     colWhy: 'Why',
     dataRows: [
       {
-        data: 'Camera image',
+        data: 'Camera image / video',
         where: 'On device (app storage; optionally Photos library)',
-        why: 'Capture and share stamped field photos',
+        why: 'Capture and share stamped field photos and videos',
+      },
+      {
+        data: 'Microphone audio (video only)',
+        where: 'On device inside the MP4 when mic is allowed',
+        why: 'Optional sound with field video',
       },
       {
         data: 'Date and time',
-        where: 'Printed on the JPEG (Europe/Rome); also EXIF DateTime',
-        why: 'Operational context on the photo',
+        where:
+          'Printed on the JPEG/MP4 (Europe/Rome); also EXIF DateTime on photos',
+        why: 'Operational context on the capture',
       },
       {
         data: 'GPS coordinates, accuracy, altitude, heading',
-        where: 'On device; on stamp / EXIF when available',
-        why: 'Location context on the photo',
+        where: 'On device; on stamp / EXIF or video metadata when available',
+        why: 'Location context on the capture',
       },
       {
         data: 'Aimed-target estimate (distance + heading)',
@@ -573,20 +589,21 @@ const en: AibCopy = {
     logTitle: 'Capture log',
     logBodyHtml:
       'Each successful shot is recorded in a local <strong>capture log</strong> (ID, date/time, and coordinates when available). The log stays on the device even if you delete the photo from the in-app gallery or system album. It is not uploaded. You can open it from Settings, copy an ID to compare with EXIF on a shared JPEG, or export everything as CSV via the system share sheet. Each app install also has a local <strong>install ID</strong> (UUID), shown in Settings. There you can tap <strong>Version</strong> or <strong>Install ID</strong> to copy the value. The install ID is written in the <code data-aib="code">install_id</code> CSV column so logs from multiple devices stay distinguishable. Reinstalling the app creates a new ID. The version string is only the app build label (not a tracking identifier).',
-    exifTitle: 'EXIF metadata',
+    exifTitle: 'EXIF and video metadata',
     exifBodyHtml:
-      'After the visual stamp, the app tries to write standard EXIF tags on the saved JPEG (for example <code data-aib="code">Software</code>, <code data-aib="code">Artist</code>, <code data-aib="code">ImageUniqueID</code>, GPS fields, and a JSON <code data-aib="code">UserComment</code>). If the device build cannot write EXIF, the photo remains saved with the visual stamp and the capture-log entry. If stamp compositing also fails, the unstamped JPEG still remains in the in-app gallery.',
+      'After the visual stamp on photos, the app tries to write standard EXIF tags on the saved JPEG (for example <code data-aib="code">Software</code>, <code data-aib="code">Artist</code>, <code data-aib="code">ImageUniqueID</code>, GPS fields, and a JSON <code data-aib="code">UserComment</code>). If the device build cannot write EXIF, the photo remains saved with the visual stamp and the capture-log entry. If stamp compositing also fails, the unstamped JPEG still remains in the in-app gallery. For videos (up to 60 s) the stamp is burned into the MP4 after stop and limited container metadata may be written; if overlay fails, the unstamped clip is kept. Videos do not use JPEG EXIF.',
     noBackendHtml:
-      'The developer does <strong>not</strong> run a backend that receives photos, location, settings, capture IDs, or install IDs.',
+      'The developer does <strong>not</strong> run a backend that receives photos, videos, location, settings, capture IDs, or install IDs.',
     permissionsTitle: 'Permissions',
     permissions: [
-      '<strong>Camera</strong>: required to capture.',
-      '<strong>Location (while using)</strong>: optional. If denied you can still shoot; geo lines on the stamp show unavailable and GPS EXIF fields are omitted.',
-      '<strong>Photos / media library</strong>: optional (prompted early after Camera, like Location): save stamped photos to the “AIB Camera” album and remove those copies when you delete them in the app. The in-app gallery remains the source of truth even if this permission is denied.',
+      '<strong>Camera</strong>: required for photos and videos.',
+      '<strong>Microphone</strong>: optional. Only for video sound; if denied, recording continues without audio.',
+      '<strong>Location (while using)</strong>: optional. If denied you can still shoot; geo lines on the stamp show unavailable and GPS EXIF/metadata fields are omitted.',
+      '<strong>Photos / media library</strong>: optional (prompted early after Camera, like Location): save stamped photos and videos to the “AIB Camera” album and remove those copies when you delete them in the app. The in-app gallery remains the source of truth even if this permission is denied.',
     ],
     shareTitle: 'Sharing',
     shareBody:
-      'If you use the system share sheet (WhatsApp, Mail, Files, etc.), the shared photo (including any EXIF written into the file), a capture-log CSV, or location text from the Map tab leaves the app under the rules of the app or service you choose. Opening a point in Apple Maps or Google Maps follows that app’s rules. That is outside AIB Camera’s control.',
+      'If you use the system share sheet (WhatsApp, Mail, Files, etc.), the shared photo or video (including any EXIF or metadata written into the file), a capture-log CSV, or location text from the Map tab leaves the app under the rules of the app or service you choose. Opening a point in Apple Maps or Google Maps follows that app’s rules. That is outside AIB Camera’s control.',
     minorsTitle: 'Children’s privacy',
     minorsBody:
       'The app is not directed at children and does not knowingly collect personal data from minors.',

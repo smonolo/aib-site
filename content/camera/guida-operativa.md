@@ -38,7 +38,7 @@
 
 ## 1. Scopo della guida
 
-Questa guida spiega, in italiano, come funziona AIB Camera sul campo: permessi, scatto, timbro sulle foto, galleria, registro scatti e uso senza rete.
+Questa guida spiega, in italiano, come funziona AIB Camera sul campo: permessi, scatto e video, timbro su foto e video, galleria, registro scatti e uso senza rete.
 
 È pensata per **chiunque** usi l’app: cittadini, volontari o altri, per documentare un incendio boschivo (AIB) o una situazione simile. Descrive il comportamento reale della versione **1.2.2**.
 
@@ -48,9 +48,9 @@ Questa guida spiega, in italiano, come funziona AIB Camera sul campo: permessi, 
 
 AIB Camera è un’applicazione mobile **indipendente e non ufficiale** per la fotografia di campo nell’antincendio boschivo e situazioni simili. È **aperta a chiunque**: non è riservata a una specifica organizzazione né solo a operatori professionali. Consente di:
 
-- scattare foto con la fotocamera posteriore;
-- stampare sul JPEG (timbro visivo) data, ora, posizione e, se disponibili, luogo e altri dati di contesto;
-- conservare le foto in una **galleria interna all’app**;
+- scattare foto e registrare video brevi (fino a 60 s) con la fotocamera posteriore;
+- stampare sul JPEG o sull’MP4 (timbro visivo) data, ora, posizione e, se disponibili, luogo e altri dati di contesto;
+- conservare foto e video in una **galleria interna all’app**;
 - condividerle con il foglio di condivisione del sistema operativo (WhatsApp, Telegram, Mail, …);
 - tenere un **registro scatti** locale con un identificativo per ogni scatto.
 
@@ -72,19 +72,20 @@ L’app **non** è realizzata, approvata né affiliata a Protezione Civile, Vigi
 
 ### Cosa fa
 
-| Funzione         | Dettaglio                                                                                                                                                             |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Timbro sul JPEG  | Data/ora (fuso **Europe/Rome**), coordinate, precisione, altitudine, direzione, vento (se online), luogo e testo personalizzato, secondo la Configurazione del timbro |
-| Punto mirato     | Distanza + direzione bussola da GPS: stima le coordinate di ciò a cui punti; commutatore Qui ↔ Mirato; etichetta «stimato» sul timbro                                 |
-| Anteprima live   | Sul mirino compare lo stesso blocco che verrà bruciato sulla foto                                                                                                     |
-| Scatto rapido    | Si possono scattare più foto di seguito; il timbro viene elaborato in coda, una foto alla volta                                                                       |
-| Scheda Mappa     | Punto Qui/Mirato sulla mappa; stesse info del timbro; copia, apri in Mappe, salva mappa come foto in galleria                                                         |
-| Galleria in-app  | Fonte di verità: le foto restano nell’app anche senza permesso alla libreria Foto                                                                                     |
-| Album di sistema | Copia nell’album «AIB Camera» se il permesso Foto è concesso (non garantita)                                                                                          |
-| Registro scatti  | Elenco locale solo in aggiunta: ID scatto, data/ora, coordinate; esportabile in CSV con `install_id`                                                                  |
-| ID installazione | UUID stabile per installazione (Impostazioni, tocca per copiare); coincide con la colonna CSV                                                                         |
-| EXIF             | Tentativo di scrittura di identificativo, GPS e commento macchina sul JPEG (non sempre disponibile)                                                                   |
-| Offline          | Scatto, timbro, galleria, registro e condivisione non richiedono rete                                                                                                 |
+| Funzione            | Dettaglio                                                                                                                                                                         |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Timbro sul JPEG/MP4 | Data/ora (fuso **Europe/Rome**), coordinate, precisione, altitudine, direzione, vento (se online), luogo e testo personalizzato, secondo la Configurazione del timbro             |
+| Foto / Video        | Pulsante modalità (in basso a destra) con menu Foto/Video; video fino a **60 s**, microfono opzionale (senza microfono il clip è muto); geo fissata all’avvio della registrazione |
+| Punto mirato        | Distanza + direzione bussola da GPS: stima le coordinate di ciò a cui punti; commutatore Qui ↔ Mirato; etichetta «stimato» sul timbro                                             |
+| Anteprima live      | Sul mirino compare lo stesso blocco che verrà bruciato sulla foto o sul video                                                                                                     |
+| Scatto rapido       | Si possono scattare più foto di seguito; il timbro (foto o video) viene elaborato in coda                                                                                         |
+| Scheda Mappa        | Punto Qui/Mirato sulla mappa; stesse info del timbro; copia, apri in Mappe, salva mappa come foto in galleria                                                                     |
+| Galleria in-app     | Fonte di verità: foto e video restano nell’app anche senza permesso alla libreria Foto                                                                                            |
+| Album di sistema    | Copia nell’album «AIB Camera» se il permesso Foto è concesso (non garantita)                                                                                                      |
+| Registro scatti     | Elenco locale solo in aggiunta: ID scatto, data/ora, coordinate; esportabile in CSV con `install_id`                                                                              |
+| ID installazione    | UUID stabile per installazione (Impostazioni, tocca per copiare); coincide con la colonna CSV                                                                                     |
+| EXIF                | Tentativo di scrittura di identificativo, GPS e commento macchina sul JPEG (non sempre disponibile)                                                                               |
+| Offline             | Scatto, timbro, galleria, registro e condivisione non richiedono rete                                                                                                             |
 
 ### Cosa non fa
 
@@ -100,7 +101,7 @@ L’app **non** è realizzata, approvata né affiliata a Protezione Civile, Vigi
 
 - Telefono **iOS** o **Android** con fotocamera posteriore.
 - Si consiglia un **dispositivo fisico** (non solo simulatore o emulatore).
-- Orientamento: **verticale e orizzontale**. In orizzontale la fotocamera sposta i controlli ai lati (flash/mira/timbro a sinistra; scatto/zoom a destra).
+- Orientamento: **verticale e orizzontale**. In orizzontale la fotocamera sposta i controlli ai lati (flash/mira/timbro a sinistra; scatto / anteprima / zoom / modalità a destra).
 - Lingua dell’interfaccia: **italiano** (predefinita) o **inglese**, selezionabile in **Impostazioni** e memorizzata sul dispositivo.
 - Fuso orario sul timbro: sempre **Europe/Rome**, indipendente dal fuso impostato sul telefono.
 
@@ -112,13 +113,16 @@ Informazioni aggiornate su disponibilità e distribuzione: [smnl.dev/aib-camera]
 
 | Permesso                  | Obbligatorio? | A cosa serve                                                                                                      |
 | ------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------------- |
-| **Fotocamera**            | Sì            | Scattare le foto. Senza questo permesso l’app non può acquisire immagini.                                         |
+| **Fotocamera**            | Sì            | Scattare foto e registrare video. Senza questo permesso l’app non può acquisire.                                  |
+| **Microfono**             | No            | Audio nei video. Se negato, la registrazione continua senza suono.                                                |
 | **Posizione (in uso)**    | No            | Coordinate, precisione, altitudine, direzione e luogo sul timbro e sulla scheda Mappa e, se possibile, nell’EXIF. |
-| **Libreria Foto / Media** | No            | Copiare le foto nell’album di sistema «AIB Camera» e rimuoverle da lì quando si eliminano dall’app.               |
+| **Libreria Foto / Media** | No            | Copiare foto e video nell’album di sistema «AIB Camera» e rimuoverli da lì quando si eliminano dall’app.          |
 
-**Senza GPS** è comunque possibile scattare. Sul timbro restano data/ora e l’eventuale testo personalizzato; le righe geo mostrano _Coordinate non disponibili_ / _Luogo non disponibile_.
+**Senza GPS** è comunque possibile scattare e registrare. Sul timbro restano data/ora e l’eventuale testo personalizzato; le righe geo mostrano _Coordinate non disponibili_ / _Luogo non disponibile_.
 
-**Senza libreria Foto** le immagini restano nella **galleria dell’app**, che è la fonte di verità.
+**Senza microfono** i video restano utilizzabili, senza audio.
+
+**Senza libreria Foto** le immagini e i video restano nella **galleria dell’app**, che è la fonte di verità.
 
 I permessi si possono rivedere da **Impostazioni** e dalle Impostazioni di sistema del telefono.
 
@@ -141,7 +145,7 @@ I nomi restano disponibili a VoiceOver / TalkBack tramite etichette di accessibi
 
 ### 7.1 Mirino e bande nere
 
-In **verticale**, l’anteprima live ha **bande nere** sopra e sotto. In alto: **flash** a sinistra, **Punta** accanto al flash, **configurazione timbro** a destra. In basso: scatto al centro, anteprima ultimo scatto a sinistra, **zoom** a destra. In **orizzontale**, le bande sono ai lati: controlli secondari a sinistra, scatto / anteprima / zoom a destra. Oltre 2× il pulsante tele mostra il fattore live (3×, 4×, …).
+In **verticale**, l’anteprima live ha **bande nere** sopra e sotto. In alto: **flash** a sinistra; a destra **Qui/Mirato** (se attivo), **Punta** e **configurazione timbro**. In basso: scatto al centro, anteprima ultimo scatto a sinistra; a destra **zoom** e **modalità Foto/Video** (icone affiancate, ciascuna con menu). In **orizzontale**, le bande sono ai lati: flash / Qui-Mirato / Punta / configurazione a sinistra; a destra anteprima, scatto, poi **zoom** e **modalità** impilati in verticale. Oltre 2× il menu zoom mostra il fattore live (3×, 4×, …).
 
 ### 7.2 Anteprima del timbro (live)
 
@@ -154,16 +158,17 @@ Carattere, dimensione del testo e opacità dello sfondo seguono la **Configurazi
 
 ### 7.3 Controlli
 
-| Controllo                   | Comportamento                                                                                                                                                                             |
-| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Pulsante di scatto**      | Cerchio bianco (banda inferiore in verticale; rail destro in orizzontale): acquisisce la foto.                                                                                            |
-| **Anteprima ultimo scatto** | Quadratino vicino allo scatto: apre il visualizzatore sull’ultima foto pronta (swipe / filmstrip per le altre). Se l’elaborazione è ancora in corso compare un indicatore di caricamento. |
-| **Flash**                   | Icona torcia (alto a sinistra in verticale; rail sinistro in orizzontale): solo **acceso / spento** (non c’è modalità automatica).                                                        |
-| **Punta**                   | Icona mirino accanto al flash, oppure **tieni premuto** il mirino (~0,5 s): foglio a tutta larghezza alto quanto il contenuto; chiusura con ✕ o tocco fuori; distanza e **Blocca punto**. |
-| **Qui / Mirato**            | Con un punto sticky attivo, selettore in alto al centro: alterna tra la tua posizione GPS e il punto mirato senza perderlo.                                                               |
-| **Configurazione**          | Icona cursori (alto a destra in verticale; rail sinistro in orizzontale): foglio a tutta larghezza dal basso (altezza piena); chiusura con ✕ o tocco fuori.                               |
-| **Zoom**                    | Pulsanti vicino allo scatto (es. 0,5× / 1× / 2× se disponibili) e gesto a **due dita**; oltre 2× il pulsante attivo mostra 3×, 4×, …. **Doppio tocco** sul mirino riporta lo zoom a 1×.   |
-| **Scorrimento**             | Scorrere verso **sinistra** dal mirino per aprire la galleria.                                                                                                                            |
+| Controllo                   | Comportamento                                                                                                                                                                                                                                         |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pulsante di scatto**      | Cerchio bianco (banda inferiore in verticale; rail destro in orizzontale): acquisisce la foto.                                                                                                                                                        |
+| **Anteprima ultimo scatto** | Quadratino vicino allo scatto: apre il visualizzatore sull’ultima foto pronta (swipe / filmstrip per le altre). Se l’elaborazione è ancora in corso compare un indicatore di caricamento.                                                             |
+| **Flash**                   | Icona torcia (alto a sinistra in verticale; rail sinistro in orizzontale): solo **acceso / spento** (non c’è modalità automatica).                                                                                                                    |
+| **Punta**                   | Icona mirino in alto a destra (accanto alla configurazione; rail sinistro in orizzontale), oppure **tieni premuto** il mirino (~0,5 s): foglio a tutta larghezza alto quanto il contenuto; chiusura con ✕ o tocco fuori; distanza e **Blocca punto**. |
+| **Qui / Mirato**            | Con un punto sticky attivo, selettore in alto a destra (accanto alla configurazione; nel rail sinistro in orizzontale): alterna tra GPS e punto mirato senza perderlo.                                                                                |
+| **Configurazione**          | Icona cursori (alto a destra in verticale; rail sinistro in orizzontale): foglio a tutta larghezza dal basso (altezza piena); chiusura con ✕ o tocco fuori.                                                                                           |
+| **Zoom**                    | Icona lente a destra dello scatto (accanto alla modalità): apre un menu 0,5× / 1× / 2× se disponibili; anche gesto a **due dita**. **Doppio tocco** sul mirino riporta lo zoom a 1×.                                                                  |
+| **Modalità Foto / Video**   | Icona fotocamera o videocamera a destra dello scatto (accanto allo zoom): apre un menu per scegliere Foto o Video.                                                                                                                                    |
+| **Scorrimento**             | Scorrere verso **sinistra** dal mirino per aprire la galleria.                                                                                                                                                                                        |
 
 La fotocamera usata è solo quella **posteriore**.
 
@@ -247,7 +252,7 @@ La scheda **Mappa** mostra il punto geo **effettivo** usato anche dal timbro:
 - icona **Punta** in alto a destra: apre lo stesso foglio della fotocamera (blocca, modifica distanza, cancella);
 - se un punto mirato è attivo, puoi alternare **Qui ↔ Mirato** anche da qui, e **trascinare il pin rosso** sulla mappa: al rilascio il punto bloccato e la distanza in metri si aggiornano rispetto alla tua posizione;
 - sullo stesso riquadro della mappa, il **timbro live** come in Fotocamera (data/ora, coordinate, meta, luogo e testo personalizzato, secondo la Configurazione);
-- **Copia** il testo negli appunti; **Apri nelle mappe** apre Apple Maps / Google Maps; **Salva come foto** cattura la mappa (con i pin) e la salva in Foto dell’app con lo stesso timbro delle scatti dalla fotocamera.
+- **Copia** il testo negli appunti; **Mappe** apre Apple Maps / Google Maps; **Salva come foto** cattura la mappa (con i pin) e la salva in Foto dell’app con lo stesso timbro delle scatti dalla fotocamera.
 
 Senza GPS la scheda resta utilizzabile: compare un avviso e non c’è marker. I tile richiedono rete: su **iOS** e **Android** Leaflet con OpenStreetMap HOT (nessuna chiave API). Copia e condivisione del testo funzionano comunque quando le coordinate sono disponibili.
 
@@ -255,7 +260,7 @@ Senza GPS la scheda resta utilizzabile: compare un avviso e non c’è marker. I
 
 ## 10. Galleria (scheda Foto)
 
-- Le foto sono raggruppate per giorno (fuso Europe/Rome), con intestazioni tipo _Oggi_ / _Ieri_.
+- Le foto sono raggruppate per giorno (fuso Europe/Rome), con intestazioni tipo _Oggi_ / _Ieri_. Giorno più recente in alto; dentro ogni giorno, dal più recente al più vecchio (ultimo scatto per primo).
 - Griglia di miniature quadrate: **3 colonne** in verticale, **5** in orizzontale.
 - Il permesso **Foto** (album di sistema) viene chiesto subito dopo la fotocamera, come la posizione; resta opzionale.
 - Toccare una miniatura apre il **visualizzatore**: scorri le foto (swipe o filmstrip sotto), poi **Condividi** / **Elimina**.

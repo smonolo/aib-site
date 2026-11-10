@@ -48,8 +48,8 @@ It is for **anyone** who uses the app: citizens, volunteers, or others, to docum
 
 AIB Camera is an **independent, unofficial** mobile app for field photography in wildfire response and similar situations. It is **open to anyone**: not limited to a specific organization or only to professional operators. It lets you:
 
-- take photos with the rear camera;
-- print on the JPEG (visual stamp) date, time, position, and, when available, place and other context;
+- take photos and short videos (up to 60 s) with the rear camera;
+- print on the JPEG or MP4 (visual stamp) date, time, position, and, when available, place and other context;
 - keep photos in an **in-app gallery**;
 - share them with the system share sheet (WhatsApp, Telegram, Mail, …);
 - keep a local **capture log** with an identifier for each shot.
@@ -72,19 +72,20 @@ The app is **not** built, endorsed, or affiliated with Civil Protection, the Fir
 
 ### What it does
 
-| Feature        | Detail                                                                                                                                         |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Stamp on JPEG  | Date/time (**Europe/Rome** timezone), coordinates, accuracy, altitude, heading, wind (when online), place, and custom text, per Stamp settings |
-| Aimed target   | Distance + compass heading from GPS: estimates coordinates of what you point at; Me ↔ Target toggle; “estimated” label on the stamp            |
-| Live preview   | The viewfinder shows the same block that will be burned into the photo                                                                         |
-| Fast capture   | You can take several photos in a row; the stamp is processed in a queue, one photo at a time                                                   |
-| Map tab        | Me/Aimed point on the map; same stamp info; copy, open in Maps, save map as a stamped in-app photo                                             |
-| In-app gallery | Source of truth: photos stay in the app even without Photos library permission                                                                 |
-| System album   | Copy into the “AIB Camera” album if Photos permission is granted (not guaranteed)                                                              |
-| Capture log    | Local append-only list: capture ID, date/time, coordinates; exportable as CSV with `install_id`                                                |
-| Install ID     | Stable UUID per install (Settings, tap to copy); matches the CSV column                                                                        |
-| EXIF           | Best-effort write of identifier, GPS, and machine comment on the JPEG (not always available)                                                   |
-| Offline        | Capture, stamp, gallery, log, and share do not require a network                                                                               |
+| Feature           | Detail                                                                                                                                         |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Stamp on JPEG/MP4 | Date/time (**Europe/Rome** timezone), coordinates, accuracy, altitude, heading, wind (when online), place, and custom text, per Stamp settings |
+| Photo / Video     | Mode button (bottom right) with Photo/Video menu; videos up to **60 s**, optional microphone (muted if denied); geo locked at record start     |
+| Aimed target      | Distance + compass heading from GPS: estimates coordinates of what you point at; Me ↔ Target toggle; “estimated” label on the stamp            |
+| Live preview      | The viewfinder shows the same block that will be burned into the photo                                                                         |
+| Fast capture      | You can take several photos in a row; the stamp is processed in a queue, one photo at a time                                                   |
+| Map tab           | Me/Aimed point on the map; same stamp info; copy, open in Maps, save map as a stamped in-app photo                                             |
+| In-app gallery    | Source of truth: photos stay in the app even without Photos library permission                                                                 |
+| System album      | Copy into the “AIB Camera” album if Photos permission is granted (not guaranteed)                                                              |
+| Capture log       | Local append-only list: capture ID, date/time, coordinates; exportable as CSV with `install_id`                                                |
+| Install ID        | Stable UUID per install (Settings, tap to copy); matches the CSV column                                                                        |
+| EXIF              | Best-effort write of identifier, GPS, and machine comment on the JPEG (not always available)                                                   |
+| Offline           | Capture, stamp, gallery, log, and share do not require a network                                                                               |
 
 ### What it does not do
 
@@ -100,7 +101,7 @@ The app is **not** built, endorsed, or affiliated with Civil Protection, the Fir
 
 - **iOS** or **Android** phone with a rear camera.
 - A **physical device** is recommended (not only a simulator or emulator).
-- Orientation: **portrait and landscape**. In landscape the camera moves controls to the side rails (flash/aim/stamp on the left; shutter/zoom on the right).
+- Orientation: **portrait and landscape**. In landscape the camera moves controls to the side rails (flash/aim/stamp on the left; shutter / last-shot / zoom / mode on the right).
 - UI language: **Italian** (default) or **English**, selectable in **Settings** and stored on the device.
 - Stamp timezone: always **Europe/Rome**, independent of the phone timezone.
 
@@ -112,13 +113,16 @@ Up-to-date availability and distribution: [smnl.dev/aib-camera](https://smnl.dev
 
 | Permission                 | Required? | What it is for                                                                                            |
 | -------------------------- | --------- | --------------------------------------------------------------------------------------------------------- |
-| **Camera**                 | Yes       | Taking photos. Without it the app cannot capture images.                                                  |
+| **Camera**                 | Yes       | Taking photos and recording videos. Without it the app cannot capture.                                    |
+| **Microphone**             | No        | Sound on videos. If denied, recording continues without audio.                                            |
 | **Location (while using)** | No        | Coordinates, accuracy, altitude, heading, and place on the stamp and Map tab and, when possible, in EXIF. |
-| **Photos / media library** | No        | Copy photos into the system “AIB Camera” album and remove them there when deleted in the app.             |
+| **Photos / media library** | No        | Copy photos and videos into the system “AIB Camera” album and remove them there when deleted in the app.  |
 
-**Without GPS** you can still shoot. The stamp keeps date/time and any custom text; geo lines show _Coordinates unavailable_ / _Place unavailable_.
+**Without GPS** you can still shoot and record. The stamp keeps date/time and any custom text; geo lines show _Coordinates unavailable_ / _Place unavailable_.
 
-**Without Photos library** images stay in the **in-app gallery**, which is the source of truth.
+**Without microphone** videos still work, without audio.
+
+**Without Photos library** images and videos stay in the **in-app gallery**, which is the source of truth.
 
 Permissions can be reviewed from **Settings** and the phone’s system Settings.
 
@@ -141,7 +145,7 @@ Names stay available to VoiceOver / TalkBack via accessibility labels.
 
 ### 7.1 Viewfinder and letterbox bands
 
-In **portrait**, the live preview has **black bands** above and below. Top: **flash** on the left, **Aim** next to flash, **stamp configuration** on the right. Bottom: shutter in the center, last-shot preview on the left, **zoom** on the right. In **landscape**, bands move to the sides: secondary controls on the left, shutter / preview / zoom on the right. Beyond 2× the tele button shows the live factor (3×, 4×, …).
+In **portrait**, the live preview has **black bands** above and below. Top: **flash** on the left; on the right **Me/Target** (when active), **Aim**, and **stamp configuration**. Bottom: shutter in the center, last-shot preview on the left; on the right **zoom** and **Photo/Video mode** side by side (each an icon with a menu). In **landscape**, bands move to the sides: flash / Me-Target / Aim / stamp settings on the left; on the right preview, shutter, then **zoom** and **mode** stacked vertically. Beyond 2× the zoom menu shows the live factor (3×, 4×, …).
 
 ### 7.2 Live stamp preview
 
@@ -154,16 +158,17 @@ Font, text size, and background opacity follow **Stamp settings** (top-right ico
 
 ### 7.3 Controls
 
-| Control               | Behavior                                                                                                                                                                   |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Shutter**           | White circle (bottom band in portrait; right rail in landscape): captures the photo.                                                                                       |
-| **Last-shot preview** | Square near the shutter: opens the detail of the last ready photo. A loading indicator appears while processing is still running.                                          |
-| **Flash**             | Flashlight icon (top left in portrait; left rail in landscape): **on / off** only (no auto mode).                                                                          |
-| **Aim**               | Crosshair icon next to flash, or **press and hold** the viewfinder (~0.5 s): full-width content-height sheet; dismiss with ✕ or tap outside; distance and **Lock target**. |
-| **Me / Target**       | With a sticky point active, selector at top center: switches between your GPS position and the aimed target without losing it.                                             |
-| **Stamp settings**    | Sliders icon (top right in portrait; left rail in landscape): full-width bottom sheet (full height); dismiss with ✕ or tap outside.                                        |
-| **Zoom**              | Buttons near the shutter (e.g. 0.5× / 1× / 2× when available) and **pinch**; beyond 2× the active button shows 3×, 4×, …. **Double-tap** the viewfinder resets zoom to 1×. |
-| **Swipe**             | Swipe **left** from the viewfinder to open the gallery.                                                                                                                    |
+| Control                | Behavior                                                                                                                                                                                                                  |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Shutter**            | White circle (bottom band in portrait; right rail in landscape): captures the photo.                                                                                                                                      |
+| **Last-shot preview**  | Square near the shutter: opens the detail of the last ready photo. A loading indicator appears while processing is still running.                                                                                         |
+| **Flash**              | Flashlight icon (top left in portrait; left rail in landscape): **on / off** only (no auto mode).                                                                                                                         |
+| **Aim**                | Crosshair icon at top right (beside stamp settings; left rail in landscape), or **press and hold** the viewfinder (~0.5 s): full-width content-height sheet; dismiss with ✕ or tap outside; distance and **Lock target**. |
+| **Me / Target**        | With a sticky point active, selector at top right (beside stamp settings; left rail in landscape): switches between GPS and the aimed target without losing it.                                                           |
+| **Stamp settings**     | Sliders icon (top right in portrait; left rail in landscape): full-width bottom sheet (full height); dismiss with ✕ or tap outside.                                                                                       |
+| **Zoom**               | Magnifier icon to the right of the shutter (beside mode): opens a 0.5× / 1× / 2× menu when available; also **pinch**. **Double-tap** the viewfinder resets zoom to 1×.                                                    |
+| **Photo / Video mode** | Camera or video icon to the right of the shutter (beside zoom): opens a menu to choose Photo or Video.                                                                                                                    |
+| **Swipe**              | Swipe **left** from the viewfinder to open the gallery.                                                                                                                                                                   |
 
 Only the **rear** camera is used.
 
@@ -247,7 +252,7 @@ The **Map** tab shows the same effective geo point used by the stamp:
 - **Aim** icon top-right: opens the same sheet as Camera (lock, change distance, clear);
 - if an aimed point is active, you can toggle **Me ↔ Aimed** here too, and **drag the red pin** on the map: on release the locked point and distance in meters update from your position;
 - on the map itself, the same **live stamp** as Camera (date/time, coordinates, meta, place, and custom text, per Stamp settings);
-- **Copy** puts the text on the clipboard; **Open in Maps** opens Apple Maps / Google Maps; **Save as photo** captures the map (with pins) and saves it into the in-app Photos gallery with the same stamp as a camera shot.
+- **Copy** puts the text on the clipboard; **Maps** opens Apple Maps / Google Maps; **Save as photo** captures the map (with pins) and saves it into the in-app Photos gallery with the same stamp as a camera shot.
 
 Without GPS the tab stays usable: a hint appears and there is no marker. Map tiles need a network: on **iOS** and **Android**, Leaflet with OpenStreetMap HOT (no API key). Copy and opening Maps still work when coordinates are available.
 
@@ -255,7 +260,7 @@ Without GPS the tab stays usable: a hint appears and there is no marker. Map til
 
 ## 10. Gallery (Photos tab)
 
-- Photos are grouped by day (Europe/Rome timezone), with headers like _Today_ / _Yesterday_.
+- Photos are grouped by day (Europe/Rome timezone), with headers like _Today_ / _Yesterday_. Newest day first; within each day, newest → oldest (latest capture first).
 - Grid of square thumbnails: **3 columns** in portrait, **5** in landscape.
 - **Photos** library permission is requested early after Camera, like Location; it remains optional.
 - Tap a thumbnail to open the **viewer**: browse shots (swipe or the filmstrip below), then **Share** / **Delete**.

@@ -2,6 +2,22 @@
 
 # Changelog: AIB Camera
 
+## 1.3.1 (10 November 2026)
+
+- **Android / zoom:** 1× / 2× / 4× chips use expo-camera’s linear mapping (`zoom` 0–1 × an assumed ~8× device max), so 2× and 4× no longer look like 1× / ~2× on typical devices.
+- **iOS / zoom:** mapping aligned to expo-camera’s exponential curve; zoom logic extracted into `useCameraZoom`.
+- **Map:** simplified Leaflet/WebView; HOT tiles with a larger keep-buffer, load-after-zoom, and retry; fewer GPS injects while panning.
+- Map button label **Maps** (was “Open in Maps”).
+- Tab bar uses dark frosted glass (blur + dark wash, light icons); on Android below API 31, opaque wash only (no unstable native blur).
+- Photos gallery: within each day, captures sort newest → oldest (latest shot top-left); map “Save as photo” stamps the save time, not a stale GPS tick.
+
+## 1.3.0 (8 November 2026)
+
+- **Video** on Camera: Photo / Video toggle, clips up to **60 s** with optional microphone (muted if mic is denied).
+- Stamp burned into the MP4 (same layout as photos) after stop; if overlay fails, the unstamped clip is kept (needs a native rebuild with Nitro / video-pipeline).
+- Gallery and viewer: JPEG poster (frame or placeholder) + Video badge, in-app playback, share/delete MP4 like photos.
+- Permissions: microphone and video media-library access; fresh native rebuild required.
+
 ## 1.2.2 (8 November 2026)
 
 - **Current wind** on the stamp (Camera and Map): speed and direction from Open-Meteo for the effective point (Me or Aimed).

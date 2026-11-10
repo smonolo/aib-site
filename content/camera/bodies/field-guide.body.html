@@ -84,10 +84,10 @@
   only to professional operators. It lets you:
 </p>
 <ul>
-  <li>take photos with the rear camera;</li>
+  <li>take photos and short videos (up to 60 s) with the rear camera;</li>
   <li>
-    print on the JPEG (visual stamp) date, time, position, and, when available,
-    place and other context;
+    print on the JPEG or MP4 (visual stamp) date, time, position, and, when
+    available, place and other context;
   </li>
   <li>keep photos in an <strong>in-app gallery</strong>;</li>
   <li>share them with the system share sheet (WhatsApp, Telegram, Mail, …);</li>
@@ -126,11 +126,19 @@
   </thead>
   <tbody>
     <tr>
-      <td>Stamp on JPEG</td>
+      <td>Stamp on JPEG/MP4</td>
       <td>
         Date/time (<strong>Europe/Rome</strong> timezone), coordinates,
         accuracy, altitude, heading, wind (when online), place, and custom text,
         per Stamp settings
+      </td>
+    </tr>
+    <tr>
+      <td>Photo / Video</td>
+      <td>
+        Mode button (bottom right) with Photo/Video menu; videos up to
+        <strong>60 s</strong>, optional microphone (muted if denied); geo locked
+        at record start
       </td>
     </tr>
     <tr>
@@ -230,7 +238,7 @@
   <li>
     Orientation: <strong>portrait and landscape</strong>. In landscape the
     camera moves controls to the side rails (flash/aim/stamp on the left;
-    shutter/zoom on the right).
+    shutter / last-shot / zoom / mode on the right).
   </li>
   <li>
     UI language: <strong>Italian</strong> (default) or <strong>English</strong>,
@@ -260,7 +268,14 @@
     <tr>
       <td><strong>Camera</strong></td>
       <td>Yes</td>
-      <td>Taking photos. Without it the app cannot capture images.</td>
+      <td>
+        Taking photos and recording videos. Without it the app cannot capture.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Microphone</strong></td>
+      <td>No</td>
+      <td>Sound on videos. If denied, recording continues without audio.</td>
     </tr>
     <tr>
       <td><strong>Location (while using)</strong></td>
@@ -274,19 +289,20 @@
       <td><strong>Photos / media library</strong></td>
       <td>No</td>
       <td>
-        Copy photos into the system “AIB Camera” album and remove them there
-        when deleted in the app.
+        Copy photos and videos into the system “AIB Camera” album and remove
+        them there when deleted in the app.
       </td>
     </tr>
   </tbody>
 </table>
 <p>
-  <strong>Without GPS</strong> you can still shoot. The stamp keeps date/time
-  and any custom text; geo lines show <em>Coordinates unavailable</em> /
-  <em>Place unavailable</em>.
+  <strong>Without GPS</strong> you can still shoot and record. The stamp keeps
+  date/time and any custom text; geo lines show
+  <em>Coordinates unavailable</em> / <em>Place unavailable</em>.
 </p>
+<p><strong>Without microphone</strong> videos still work, without audio.</p>
 <p>
-  <strong>Without Photos library</strong> images stay in the
+  <strong>Without Photos library</strong> images and videos stay in the
   <strong>in-app gallery</strong>, which is the source of truth.
 </p>
 <p>
@@ -321,12 +337,14 @@
 <p>
   In <strong>portrait</strong>, the live preview has
   <strong>black bands</strong> above and below. Top: <strong>flash</strong> on
-  the left, <strong>Aim</strong> next to flash,
-  <strong>stamp configuration</strong> on the right. Bottom: shutter in the
-  center, last-shot preview on the left, <strong>zoom</strong> on the right. In
-  <strong>landscape</strong>, bands move to the sides: secondary controls on the
-  left, shutter / preview / zoom on the right. Beyond 2× the tele button shows
-  the live factor (3×, 4×, …).
+  the left; on the right <strong>Me/Target</strong> (when active),
+  <strong>Aim</strong>, and <strong>stamp configuration</strong>. Bottom:
+  shutter in the center, last-shot preview on the left; on the right
+  <strong>zoom</strong> and <strong>Photo/Video mode</strong> side by side (each
+  an icon with a menu). In <strong>landscape</strong>, bands move to the sides:
+  flash / Me-Target / Aim / stamp settings on the left; on the right preview,
+  shutter, then <strong>zoom</strong> and <strong>mode</strong> stacked
+  vertically. Beyond 2× the zoom menu shows the live factor (3×, 4×, …).
 </p>
 <h3>7.2 Live stamp preview</h3>
 <p>
@@ -381,16 +399,18 @@
     <tr>
       <td><strong>Aim</strong></td>
       <td>
-        Crosshair icon next to flash, or <strong>press and hold</strong> the
-        viewfinder (~0.5 s): full-width content-height sheet; dismiss with ✕ or
-        tap outside; distance and <strong>Lock target</strong>.
+        Crosshair icon at top right (beside stamp settings; left rail in
+        landscape), or <strong>press and hold</strong> the viewfinder (~0.5 s):
+        full-width content-height sheet; dismiss with ✕ or tap outside; distance
+        and <strong>Lock target</strong>.
       </td>
     </tr>
     <tr>
       <td><strong>Me / Target</strong></td>
       <td>
-        With a sticky point active, selector at top center: switches between
-        your GPS position and the aimed target without losing it.
+        With a sticky point active, selector at top right (beside stamp
+        settings; left rail in landscape): switches between GPS and the aimed
+        target without losing it.
       </td>
     </tr>
     <tr>
@@ -403,9 +423,16 @@
     <tr>
       <td><strong>Zoom</strong></td>
       <td>
-        Buttons near the shutter (e.g. 0.5× / 1× / 2× when available) and
-        <strong>pinch</strong>; beyond 2× the active button shows 3×, 4×, ….
+        Magnifier icon to the right of the shutter (beside mode): opens a 0.5× /
+        1× / 2× menu when available; also <strong>pinch</strong>.
         <strong>Double-tap</strong> the viewfinder resets zoom to 1×.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Photo / Video mode</strong></td>
+      <td>
+        Camera or video icon to the right of the shutter (beside zoom): opens a
+        menu to choose Photo or Video.
       </td>
     </tr>
     <tr>
@@ -580,7 +607,7 @@
   </li>
   <li>
     <strong>Copy</strong> puts the text on the clipboard;
-    <strong>Open in Maps</strong> opens Apple Maps / Google Maps;
+    <strong>Maps</strong> opens Apple Maps / Google Maps;
     <strong>Save as photo</strong> captures the map (with pins) and saves it
     into the in-app Photos gallery with the same stamp as a camera shot.
   </li>
@@ -596,7 +623,8 @@
 <ul>
   <li>
     Photos are grouped by day (Europe/Rome timezone), with headers like
-    <em>Today</em> / <em>Yesterday</em>.
+    <em>Today</em> / <em>Yesterday</em>. Newest day first; within each day,
+    newest → oldest (latest capture first).
   </li>
   <li>
     Grid of square thumbnails: <strong>3 columns</strong> in portrait,
